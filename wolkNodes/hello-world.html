@@ -1,0 +1,30 @@
+<script type="text/javascript">
+    RED.nodes.registerType('Hello World', {
+        category: 'WolkConnect',
+        color: '#00afff',
+        defaults: {
+            name: {value:''}
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: 'hello.png',
+        label: function() {
+            return this.name || 'Hello World';
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="Hello World">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="input-node-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-topic"><i class="icon-tag"></i> Topic</label>
+        <input type="text" id="input-node-topic" placeholder="Topic">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="Hello World">
+    <p>A node that sends Hello World<br></p>
+</script>

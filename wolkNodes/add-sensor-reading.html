@@ -1,0 +1,31 @@
+<script type="text/javascript">
+    RED.nodes.registerType('Add Sensor Reading', {
+        category: 'WolkConnect',
+        color: '#00afff',
+        defaults: {
+            name: {value:''},
+            reference: {value: ''}
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: 'add.png',
+        label: function() {
+            return this.name || 'Add Sensor Reading';
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="Add Sensor Reading">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-reference"><i class="icon-tag"></i> Reference</label>
+        <input type="text" id="node-input-reference" placeholder="Reference">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="Add Sensor Reading">
+    <p>Adds a sensor reading to the queue, waiting to publish data<br></p>
+</script>
