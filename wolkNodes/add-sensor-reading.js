@@ -4,10 +4,11 @@ module.exports = RED => {
         const context = this.context();
         this.reference = config.reference;
         this.on('input', msg => {
-            const outMsg = {payload: {
+            msg.payload = { 
                 reference: this.reference,
-                value: 50}};
-            this.send(outMsg);
+                value: msg.payload
+            };
+            this.send(msg);
         });
     }
     RED.nodes.registerType('Add Sensor Reading', addSensorReading);

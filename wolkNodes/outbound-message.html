@@ -1,0 +1,26 @@
+<script type="text/javascript">
+    RED.nodes.registerType('Outbound Message', {
+        category: 'WolkConnect',
+        color: '#00afff',
+        defaults: {
+            name: {value:''}
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: 'add.png',
+        label: function() {
+            return this.name || 'Outbound Message';
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="Outbound Message">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="Outbound Message">
+    <p>Serialize outbound messages<br></p>
+</script>
