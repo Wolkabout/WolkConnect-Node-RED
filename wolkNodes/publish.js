@@ -5,6 +5,9 @@ module.exports = RED => {
         const flow = context.flow;
         const node = this;
         this.on('input', msg => {
+            if (!flow.connected) {
+                this.log('Please connect device to platform');
+            }
             for (let message of flow.outboundMessages) {
                 msg.topic = message.topic;
                 msg.payload = message.payload;

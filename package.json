@@ -6,7 +6,8 @@
     "dependencies": {},
     "node-red": {
         "nodes": {
-            "init": "./wolkNodes/init.js",
+            "connect": "./wolkNodes/connect.js",
+            "disconnect": "./wolkNodes/disconnect.js",
             "add-sensor-reading": "./wolkNodes/add-sensor-reading.js",
             "get-random-number": "./wolkNodes/get-random-number.js",
             "outbound-message": "./wolkNodes/outbound-message.js",

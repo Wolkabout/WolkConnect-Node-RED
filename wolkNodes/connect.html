@@ -1,5 +1,5 @@
 <script type="text/javascript">
-    RED.nodes.registerType('init', {
+    RED.nodes.registerType('connect', {
         category: 'WolkConnect',
         color: '#00afff',
         defaults: {
@@ -7,14 +7,16 @@
             key: {value: ''},
             password: {value: ''}
         },
+        inputs: 1,
+        outputs: 1,
         icon: 'add.png',
         label: function() {
-            return this.name || 'init';
+            return this.name || 'connect';
         }
     });
 </script>
 
-<script type="text/x-red" data-template-name="init">
+<script type="text/x-red" data-template-name="connect">
     <div class="form-row">
         <label for="node-input-key"><i class="icon-tag"></i> Device Key</label>
         <input type="text" id="node-input-key" placeholder="Device Key">
@@ -25,6 +27,6 @@
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="init">
+<script type="text/x-red" data-help-name="connect">
     <p>Adds a sensor reading to the queue, waiting to publish data<br></p>
 </script>

@@ -4,6 +4,9 @@ module.exports = RED => {
         const context = this.context();
         const flow = context.flow;
         this.on('input', msg => {
+            if (!flow.connected) {
+                throw new Error('Connect device to platform!');
+            }
             msg.reference = msg.payload.reference;
             msg.topic = `readings/${flow.device.key}/${msg.reference}`;
             msg.payload = `{"data": "${msg.payload.value}"}`;

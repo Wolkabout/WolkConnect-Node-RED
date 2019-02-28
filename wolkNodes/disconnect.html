@@ -1,0 +1,32 @@
+<script type="text/javascript">
+    RED.nodes.registerType('disconnect', {
+        category: 'WolkConnect',
+        color: '#00afff',
+        defaults: {
+            name: {value:''},
+            key: {value: ''},
+            password: {value: ''}
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: 'add.png',
+        label: function() {
+            return this.name || 'disconnect';
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="disconnect">
+    <div class="form-row">
+        <label for="node-input-key"><i class="icon-tag"></i> Device Key</label>
+        <input type="text" id="node-input-key" placeholder="Device Key">
+    </div>
+    <div class="form-row">
+        <label for="node-input-password"><i class="icon-tag"></i> Device Password</label>
+        <input type="password" id="node-input-password" placeholder="Device Password">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="disconnect">
+    <p>Adds a sensor reading to the queue, waiting to publish data<br></p>
+</script>
