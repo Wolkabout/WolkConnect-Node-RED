@@ -6,11 +6,11 @@
     "dependencies": {},
     "node-red": {
         "nodes": {
-            "hello-world": "./wolkNodes/hello-world.js",
             "init": "./wolkNodes/init.js",
             "add-sensor-reading": "./wolkNodes/add-sensor-reading.js",
             "get-random-number": "./wolkNodes/get-random-number.js",
-            "outbound-message": "./wolkNodes/outbound-message.js"
+            "outbound-message": "./wolkNodes/outbound-message.js",
+            "publish": "./wolkNodes/publish.js"
         }
     }
 }

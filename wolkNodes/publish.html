@@ -1,0 +1,26 @@
+<script type="text/javascript">
+    RED.nodes.registerType('publish', {
+        category: 'WolkConnect',
+        color: '#00afff',
+        defaults: {
+            name: {value:''}
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: 'add.png',
+        label: function() {
+            return this.name || 'publish';
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="publish">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="publish">
+    <p>Publishes data to the server<br></p>
+</script>
