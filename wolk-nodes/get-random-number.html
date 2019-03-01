@@ -1,5 +1,5 @@
 <script type="text/javascript">
-    RED.nodes.registerType('Get Random Number', {
+    RED.nodes.registerType('getRandomNumber', {
         category: 'WolkConnect',
         color: '#00afff',
         defaults: {
@@ -11,12 +11,12 @@
         outputs: 1,
         icon: 'add.png',
         label: function() {
-            return this.name || 'Get Random Number';
+            return this.name || 'getRandomNumber';
         }
     });
 </script>
 
-<script type="text/x-red" data-template-name="Get Random Number">
+<script type="text/x-red" data-template-name="getRandomNumber">
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
@@ -31,6 +31,6 @@
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="Get Random Number">
+<script type="text/x-red" data-help-name="getRandomNumber">
     <p>Get random number to add as a sensor value<br></p>
 </script>

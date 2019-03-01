@@ -19,5 +19,5 @@ module.exports = RED => {
             this.send(msg);
         });
     }
-    RED.nodes.registerType('Outbound Message', outboundMessage);
+    RED.nodes.registerType('outboundMessage', outboundMessage);
 }

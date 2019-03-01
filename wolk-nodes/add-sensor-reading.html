@@ -1,5 +1,5 @@
 <script type="text/javascript">
-    RED.nodes.registerType('Add Sensor Reading', {
+    RED.nodes.registerType('addSensorReading', {
         category: 'WolkConnect',
         color: '#00afff',
         defaults: {
@@ -10,12 +10,12 @@
         outputs: 1,
         icon: 'add.png',
         label: function() {
-            return this.name || 'Add Sensor Reading';
+            return this.name || 'addSensorReading';
         }
     });
 </script>
 
-<script type="text/x-red" data-template-name="Add Sensor Reading">
+<script type="text/x-red" data-template-name="addSensorReading">
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
@@ -26,6 +26,6 @@
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="Add Sensor Reading">
+<script type="text/x-red" data-help-name="addSensorReading">
     <p>Adds a sensor reading to the queue, waiting to publish data<br></p>
 </script>

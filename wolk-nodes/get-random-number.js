@@ -9,5 +9,5 @@ module.exports = RED => {
             this.send(msg);
         });
     }
-    RED.nodes.registerType('Get Random Number', getRandomNumber);
+    RED.nodes.registerType('getRandomNumber', getRandomNumber);
 }

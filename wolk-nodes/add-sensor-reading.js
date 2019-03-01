@@ -11,5 +11,5 @@ module.exports = RED => {
             this.send(msg);
         });
     }
-    RED.nodes.registerType('Add Sensor Reading', addSensorReading);
+    RED.nodes.registerType('addSensorReading', addSensorReading);
 }
