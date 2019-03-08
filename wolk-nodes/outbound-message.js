@@ -11,7 +11,7 @@ module.exports = RED => {
             msg.topic = `readings/${flow.device.key}/${msg.reference}`;
             msg.payload = `{"data": "${msg.payload.value}"}`;
             flow.outboundMessages.length > 0 
-                ? flow.outboundMessages.map(cur => cur.reference === msg.reference 
+                ? flow.outboundMessages.forEach(cur => cur.reference === msg.reference 
                     ? msg 
                     : cur
                 )
