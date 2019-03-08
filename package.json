@@ -1,12 +1,12 @@
 {
-    "name": "wolkconnect-node-red",
+    "name": "node-red-contrib-wolkconnect",
     "version": "0.0.1",
     "description": "WolkConnect package for connecting to WolkAbout IoT tool through Node-RED",
     "author": "Milan Jankov <milan.jankov@wolkabout.com>",
     "dependencies": {},
     "repository": {
         "type": "git",
-        "url" : "https://github.com/Varangian41/wolkconnect-node-red"
+        "url": "https://github.com/Varangian41/node-red-contrib-wolkconnect"
     },
     "node-red": {
         "nodes": {
