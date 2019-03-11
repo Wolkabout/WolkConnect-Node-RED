@@ -8,13 +8,13 @@
         "type": "git",
         "url": "https://github.com/Varangian41/node-red-contrib-wolkconnect"
     },
+    "license": "UNLICENSED",
     "node-red": {
         "nodes": {
             "connect": "./wolk-nodes/connect.js",
             "disconnect": "./wolk-nodes/disconnect.js",
             "add-sensor-reading": "./wolk-nodes/add-sensor-reading.js",
             "get-random-number": "./wolk-nodes/get-random-number.js",
-            "outbound-message": "./wolk-nodes/outbound-message.js",
             "publish": "./wolk-nodes/publish.js",
             "keep-alice": "./wolk-nodes/keep-alive.js"
         }
