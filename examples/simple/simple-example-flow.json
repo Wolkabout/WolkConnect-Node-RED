@@ -1,15 +1,8 @@
 [
   {
-    "id": "35daf7a0.7a1aa8",
-    "type": "tab",
-    "label": "Simple Example Flow",
-    "disabled": false,
-    "info": ""
-  },
-  {
-    "id": "f0b66f40.ba83a",
+    "id": "f883a924.634888",
     "type": "inject",
-    "z": "35daf7a0.7a1aa8",
+    "z": "8b7bffe2.a8516",
     "name": "",
     "topic": "",
     "payload": "",
@@ -20,12 +13,12 @@
     "onceDelay": 0.1,
     "x": 120,
     "y": 160,
-    "wires": [["252ebe20.d95c72"]]
+    "wires": [["2c1b51c.b7c63ae"]]
   },
   {
-    "id": "cae52aab.d40828",
+    "id": "b168c25.7641b4",
     "type": "mqtt out",
-    "z": "35daf7a0.7a1aa8",
+    "z": "8b7bffe2.a8516",
     "name": "Integration",
     "topic": "",
     "qos": "",
@@ -36,29 +29,29 @@
     "wires": []
   },
   {
-    "id": "f9b88b2d.8fc628",
+    "id": "5dc7f55d.478b2c",
     "type": "publish",
-    "z": "35daf7a0.7a1aa8",
+    "z": "8b7bffe2.a8516",
     "name": "",
-    "x": 200,
-    "y": 320,
-    "wires": [["cae52aab.d40828"]]
+    "x": 180,
+    "y": 280,
+    "wires": [["b168c25.7641b4"]]
   },
   {
-    "id": "13f38368.6864fd",
+    "id": "249128e5.5c6498",
     "type": "connect",
-    "z": "35daf7a0.7a1aa8",
+    "z": "8b7bffe2.a8516",
     "name": "",
-    "key": "udvua0k0xp99z64a",
-    "password": "e7d4d28d-616f-4891-ab6a-a17a2df46f9f",
+    "key": "",
+    "password": "",
     "x": 280,
     "y": 40,
-    "wires": [["cae52aab.d40828"]]
+    "wires": [["b168c25.7641b4"]]
   },
   {
-    "id": "9a46e3e6.2afd9",
+    "id": "8fbe51ee.41a39",
     "type": "inject",
-    "z": "35daf7a0.7a1aa8",
+    "z": "8b7bffe2.a8516",
     "name": "",
     "topic": "",
     "payload": "",
@@ -69,12 +62,12 @@
     "onceDelay": 0.1,
     "x": 120,
     "y": 40,
-    "wires": [["13f38368.6864fd"]]
+    "wires": [["249128e5.5c6498"]]
   },
   {
-    "id": "f1cdbe11.65d9f",
+    "id": "4403c3df.15dafc",
     "type": "inject",
-    "z": "35daf7a0.7a1aa8",
+    "z": "8b7bffe2.a8516",
     "name": "",
     "topic": "",
     "payload": "",
@@ -85,23 +78,23 @@
     "onceDelay": 0.1,
     "x": 120,
     "y": 100,
-    "wires": [["75919a8e.f77de4"]]
+    "wires": [["4c7f6f10.38b27"]]
   },
   {
-    "id": "75919a8e.f77de4",
+    "id": "4c7f6f10.38b27",
     "type": "disconnect",
-    "z": "35daf7a0.7a1aa8",
+    "z": "8b7bffe2.a8516",
     "name": "",
     "key": "",
     "password": "",
     "x": 290,
     "y": 100,
-    "wires": [["cae52aab.d40828"]]
+    "wires": [["b168c25.7641b4"]]
   },
   {
-    "id": "28828442.f9605c",
+    "id": "dc658da8.55e51",
     "type": "inject",
-    "z": "35daf7a0.7a1aa8",
+    "z": "8b7bffe2.a8516",
     "name": "",
     "topic": "",
     "payload": "",
@@ -112,23 +105,23 @@
     "onceDelay": "",
     "x": 130,
     "y": 380,
-    "wires": [["111dac6.df1ab54"]]
+    "wires": [["68a701f2.12afd"]]
   },
   {
-    "id": "111dac6.df1ab54",
+    "id": "68a701f2.12afd",
     "type": "keepAlive",
-    "z": "35daf7a0.7a1aa8",
+    "z": "8b7bffe2.a8516",
     "name": "",
     "key": "",
     "password": "",
     "x": 300,
     "y": 380,
-    "wires": [["cae52aab.d40828", "7cb32fe0.e12b7"]]
+    "wires": [["b168c25.7641b4", "e7bbb0a7.0b115"]]
   },
   {
-    "id": "7cb32fe0.e12b7",
+    "id": "e7bbb0a7.0b115",
     "type": "debug",
-    "z": "35daf7a0.7a1aa8",
+    "z": "8b7bffe2.a8516",
     "name": "",
     "active": true,
     "tosidebar": true,
@@ -140,34 +133,24 @@
     "wires": []
   },
   {
-    "id": "252ebe20.d95c72",
+    "id": "2c1b51c.b7c63ae",
     "type": "getRandomNumber",
-    "z": "35daf7a0.7a1aa8",
+    "z": "8b7bffe2.a8516",
     "name": "",
     "minimum": "-20",
     "maximum": "80",
     "x": 180,
     "y": 200,
-    "wires": [["5ab434d9.849e4c"]]
+    "wires": [["937b24ec.6f2ca8"]]
   },
   {
-    "id": "5ab434d9.849e4c",
+    "id": "937b24ec.6f2ca8",
     "type": "addSensorReading",
-    "z": "35daf7a0.7a1aa8",
-    "name": "",
+    "z": "8b7bffe2.a8516",
     "reference": "T",
     "x": 190,
     "y": 240,
-    "wires": [["2edca98.56d6556"]]
-  },
-  {
-    "id": "2edca98.56d6556",
-    "type": "outboundMessage",
-    "z": "35daf7a0.7a1aa8",
-    "name": "",
-    "x": 200,
-    "y": 280,
-    "wires": [["f9b88b2d.8fc628"]]
+    "wires": [["5dc7f55d.478b2c"]]
   },
   {
     "id": "fed1f646.9e36b8",
@@ -177,7 +160,7 @@
     "broker": "api-integration.wolksense.com",
     "port": "1883",
     "tls": "773d20df.db2a4",
-    "clientid": "udvua0k0xp99z64a",
+    "clientid": "",
     "usetls": false,
     "compatmode": false,
     "keepalive": "60",
@@ -185,10 +168,10 @@
     "birthTopic": "",
     "birthQos": "0",
     "birthPayload": "",
-    "closeTopic": "lastwill/udvua0k0xp99z64a",
+    "closeTopic": "lastwill/",
     "closeQos": "2",
     "closePayload": "Gone offline",
-    "willTopic": "lastwill/udvua0k0xp99z64a",
+    "willTopic": "lastwill/",
     "willQos": "2",
     "willPayload": "Gone offline"
   },

@@ -39,7 +39,7 @@ Import ```simple-example-flow.json``` from ```/examples/simple/``` into Node-RED
 Provide your device key and password to ```MQTT out``` and ```wolkconnect connect``` nodes.<br>
 Use your device key for client ID, username.<br>
 Use device password for password on ```MQTT out```.<br>
-Lastwill messages topic uses the following pattern ```lastwill/{device_key}```, and the payload is ```Gone offline``` .<br>
+Lastwill messages topic uses the following pattern ```lastwill/{device_key}```.<br>
 
 Deploy the flow.
 
