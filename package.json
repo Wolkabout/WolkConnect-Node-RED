@@ -6,7 +6,7 @@
     "dependencies": {},
     "repository": {
         "type": "git",
-        "url": "https://github.com/Varangian41/node-red-contrib-wolkconnect"
+        "url": "https://github.com/Wolkabout/node-red-contrib-wolkconnect"
     },
     "license": "UNLICENSED",
     "node-red": {
