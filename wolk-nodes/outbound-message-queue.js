@@ -4,28 +4,26 @@ module.exports = RED => {
         const context = this.context();
         const flow = context.flow;
         this.on('input', msg => {
-            this.maxData = config.maxData;
 
-            if (flow.outboundMessages.length === 0) {
-                flow.outboundMessages.push(msg);
-            } else {
+            let newValues = [];
+
+            if (flow.outboundMessages.length > 0) {
                 flow.outboundMessages.forEach((cur, ind) => {
-                    if(cur.reference === msg.reference) {
+                    if (cur.reference === msg.reference) {
                         flow.outboundMessages[ind] = msg;
                     } else {
-                        flow.outboundMessages.push(msg);
+                        newValues.push(msg);
                     }
-                })
-    
-                // if (loc > -1) {
-                //     flow.outboundMessages[loc] = msg;
-                // } else {
-                //     flow.outboundMessages.push(msg);
-                // }
+                });
+            } else {
+                newValues.push(msg);
             }
 
-
-            this.send(flow.outboundMessages);
+            newValues.forEach(cur => {
+                flow.outboundMessages.push(cur);
+            })
+            console.log(flow.outboundMessages);
+            newValues = [];
         
         });
     }

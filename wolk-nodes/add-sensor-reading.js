@@ -14,7 +14,7 @@ module.exports = RED => {
             msg.topic = `readings/${flow.device.key}/${this.reference}`;
             msg.payload = `[{"data": "${this.value}"}]`;
             msg.reference = this.reference;
-            
+
             this.send(msg);
         });
     }

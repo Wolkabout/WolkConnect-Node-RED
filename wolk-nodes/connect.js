@@ -8,6 +8,7 @@ module.exports = RED => {
                 password: config.password
             }
             flow.outboundMessages = [];
+            flow.array= [];
             flow.connected = true;
         })
     }
