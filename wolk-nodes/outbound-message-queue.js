@@ -3,28 +3,22 @@ module.exports = RED => {
         RED.nodes.createNode(this, config);
         const context = this.context();
         const flow = context.flow;
+        const maxData = parseInt(config.maxData, 10) || 1;
         this.on('input', msg => {
 
-            let newValues = [];
-
-            if (flow.outboundMessages.length > 0) {
-                flow.outboundMessages.forEach((cur, ind) => {
-                    if (cur.reference === msg.reference) {
-                        flow.outboundMessages[ind] = msg;
-                    } else {
-                        newValues.push(msg);
-                    }
-                });
+            let existing = flow.outboundMessages.find(cur => cur.reference === msg.reference);
+            if(!!existing) {
+                if (existing.payload.length < maxData) {
+                    existing.payload = [...existing.payload, ...msg.payload];
+                } else if (existing.payload.length === maxData) {
+                    existing.payload.shift();
+                    existing.payload = [...existing.payload, ...msg.payload];
+                }
             } else {
-                newValues.push(msg);
+                flow.outboundMessages.push(msg);
             }
 
-            newValues.forEach(cur => {
-                flow.outboundMessages.push(cur);
-            })
-            console.log(flow.outboundMessages);
-            newValues = [];
-        
+            this.send(msg);
         });
     }
     RED.nodes.registerType('outboundMessageQueue', outboundMessageQueue);
