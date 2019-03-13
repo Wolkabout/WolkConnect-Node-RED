@@ -6,18 +6,21 @@ module.exports = RED => {
         const maxData = parseInt(config.maxData, 10) || 1;
         this.on('input', msg => {
 
-            let existing = flow.outboundMessages.find(cur => cur.reference === msg.reference);
-            if(!!existing) {
-                if (existing.payload.length < maxData) {
-                    existing.payload = [...existing.payload, ...msg.payload];
-                } else if (existing.payload.length === maxData) {
-                    existing.payload.shift();
-                    existing.payload = [...existing.payload, ...msg.payload];
+            msg.payload.forEach(cur => {
+                let existing = flow.outboundMessages.find(el => el.reference === cur.reference);
+                if(!!existing) {
+                    if (existing.payload.length < maxData) {
+                        existing.payload = [...cur.payload, ...existing.payload];
+                    } else if (existing.payload.length === maxData) {
+                        existing.payload.pop();
+                        existing.payload = [...cur.payload, ...existing.payload];
+                    }
+                } else {
+                    flow.outboundMessages.unshift(cur);
                 }
-            } else {
-                flow.outboundMessages.push(msg);
-            }
+            })
 
+            msg.payload = flow.outboundMessages;
             this.send(msg);
         });
     }

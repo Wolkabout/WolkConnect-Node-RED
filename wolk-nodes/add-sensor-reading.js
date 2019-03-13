@@ -11,9 +11,11 @@ module.exports = RED => {
                 throw new Error('Connect device to platform!');
             }
 
-            msg.topic = `readings/${flow.device.key}/${this.reference}`;
-            msg.payload = [{data: this.value}];
-            msg.reference = this.reference;
+            msg.payload = {
+                reference: this.reference,
+                topic: `readings/${flow.device.key}/${this.reference}`,
+                payload: [{data: this.value}]
+            }
 
             this.send(msg);
         });
