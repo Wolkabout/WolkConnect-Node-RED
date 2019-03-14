@@ -7,7 +7,7 @@ module.exports = RED => {
                 key: config.key,
                 password: config.password
             }
-            flow.outboundMessages = [];
+            flow.outboundMessages = flow.outboundMessages || [];
             flow.connected = true;
         })
     }

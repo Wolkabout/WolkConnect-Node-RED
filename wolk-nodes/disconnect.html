@@ -9,7 +9,7 @@
         },
         inputs: 1,
         outputs: 1,
-        icon: 'add.png',
+        icon: 'logo.png',
         label: function() {
             return this.name || 'disconnect';
         }
@@ -17,16 +17,8 @@
 </script>
 
 <script type="text/x-red" data-template-name="disconnect">
-    <div class="form-row">
-        <label for="node-input-key"><i class="icon-tag"></i> Device Key</label>
-        <input type="text" id="node-input-key" placeholder="Device Key">
-    </div>
-    <div class="form-row">
-        <label for="node-input-password"><i class="icon-tag"></i> Device Password</label>
-        <input type="password" id="node-input-password" placeholder="Device Password">
-    </div>
 </script>
 
 <script type="text/x-red" data-help-name="disconnect">
-    <p>Adds a sensor reading to the queue, waiting to publish data<br></p>
+    <p>Simulates device disconnecting from the platform.<br></p>
 </script>
