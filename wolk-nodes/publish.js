@@ -9,7 +9,7 @@ module.exports = RED => {
                 throw new Error('Please connect device to platform');
             }
 
-            for (let message of flow.outboundMessages) {
+            for (let message of msg.payload) {
                 msg.topic = message.topic;
                 msg.payload = JSON.stringify(message.payload);
                 msg.qos = 2;

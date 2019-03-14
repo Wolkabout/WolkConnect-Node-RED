@@ -9,6 +9,11 @@ module.exports = RED => {
             }
             flow.outboundMessages = flow.outboundMessages || [];
             flow.connected = true;
+
+            msg.topic = `actuators/status/${flow.device.key}/SW`;
+            msg.payload = `{"status": "READY", "value": ""}`;
+
+            this.send(msg);
         })
     }
     RED.nodes.registerType('connect', connect);

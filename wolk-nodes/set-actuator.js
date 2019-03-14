@@ -1,5 +1,5 @@
 module.exports = RED => {
-    function addSensorReading(config) {
+    function setActuator(config) {
         RED.nodes.createNode(this, config);
         const context = this.context();
         const flow = context.flow;
@@ -13,12 +13,12 @@ module.exports = RED => {
 
             msg.payload = {
                 reference: this.reference,
-                topic: `readings/${flow.device.key}/${this.reference}`,
-                payload: this.reference === 'ACL' ? [{data: `${this.value},${this.value},${this.value}`}] : [{data: this.value}]
+                topic: `actuators/status/${flow.device.key}/${this.reference}`,
+                payload: {status: "READY", value: JSON.parse(this.value).value}
             }
 
             this.send(msg);
         });
     }
-    RED.nodes.registerType('addSensorReading', addSensorReading);
+    RED.nodes.registerType('setActuator', setActuator);
 }
