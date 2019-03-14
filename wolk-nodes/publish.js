@@ -1,3 +1,4 @@
+
 module.exports = RED => {
     function publish(config) {
         RED.nodes.createNode(this, config);

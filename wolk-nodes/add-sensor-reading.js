@@ -6,12 +6,16 @@ module.exports = RED => {
         this.on('input', msg => {
             this.value = config.value || msg.payload;
             this.reference = config.reference;
+            this.msgComplete = config.msgComplete;
 
             if (flow.connected) {
                 msg.payload = {
                     reference: this.reference,
                     topic: `readings/${flow.device.key}/${this.reference}`,
                     payload: this.reference === 'ACL' ? [{data: `${this.value},${this.value},${this.value}`}] : [{data: this.value}]
+                }
+                if (this.msgComplete) {
+                    msg.complete = this.msgComplete;
                 }
     
                 this.send(msg);
