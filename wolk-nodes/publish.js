@@ -12,6 +12,8 @@ module.exports = RED => {
             for (let message of flow.outboundMessages) {
                 msg.topic = message.topic;
                 msg.payload = JSON.stringify(message.payload);
+                msg.qos = 2;
+                msg.retain = false;
                 node.send(msg);
             }
             

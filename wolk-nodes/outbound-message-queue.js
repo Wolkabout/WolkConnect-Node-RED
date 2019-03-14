@@ -14,6 +14,8 @@ module.exports = RED => {
                     } else if (existing.payload.length === maxData) {
                         existing.payload.pop();
                         existing.payload = [...cur.payload, ...existing.payload];
+                    } else {
+                        existing.payload = [...cur.payload];
                     }
                 } else {
                     flow.outboundMessages.unshift(cur);
