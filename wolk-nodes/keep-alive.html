@@ -7,7 +7,9 @@
         inputs: 1,
         outputs: 1,
         icon: 'logo.png',
-        label:  'keepAlive'
+        label: function() {
+            return this.name || 'keepAlive';
+        }
     });
 </script>
 
@@ -15,5 +17,5 @@
 </script>
 
 <script type="text/x-red" data-help-name="keepAlive">
-    <p>Publishes ping message to keep the device alive on the platform.<br></p>
+    <p>Sends a ping message to keep the device active.<br></p>
 </script>
