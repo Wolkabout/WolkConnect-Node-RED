@@ -5,9 +5,9 @@ Supported device communication protocol(s):
 
 ## Prerequisite
 
-* NodeJS >= v10.15.13
-* npm >= v6.4.1
-* Node-RED >= v0.19.5
+* NodeJS ^10.15.13
+* npm ^6.4.1
+* Node-RED ^0.19.5
 
 NodeJs and npm can be installed either by installing binaries:
 
