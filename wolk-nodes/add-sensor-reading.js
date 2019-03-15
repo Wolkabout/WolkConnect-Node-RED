@@ -7,17 +7,15 @@ module.exports = RED => {
             this.value = config.value || msg.payload;
             this.reference = config.reference;
 
-            if (!flow.connected) {
-                throw new Error('Connect device to platform!');
+            if (flow.connected) {
+                msg.payload = {
+                    reference: this.reference,
+                    topic: `readings/${flow.device.key}/${this.reference}`,
+                    payload: this.reference === 'ACL' ? [{data: `${this.value},${this.value},${this.value}`}] : [{data: this.value}]
+                }
+    
+                this.send(msg);
             }
-
-            msg.payload = {
-                reference: this.reference,
-                topic: `readings/${flow.device.key}/${this.reference}`,
-                payload: this.reference === 'ACL' ? [{data: `${this.value},${this.value},${this.value}`}] : [{data: this.value}]
-            }
-
-            this.send(msg);
         });
     }
     RED.nodes.registerType('addSensorReading', addSensorReading);

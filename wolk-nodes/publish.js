@@ -7,14 +7,14 @@ module.exports = RED => {
         this.on('input', msg => {
             if (!flow.connected) {
                 throw new Error('Please connect device to platform');
-            }
-
-            for (let message of msg.payload) {
-                msg.topic = message.topic;
-                msg.payload = JSON.stringify(message.payload);
-                msg.qos = 2;
-                msg.retain = false;
-                node.send(msg);
+            } else {
+                for (let message of msg.payload) {
+                    msg.topic = message.topic;
+                    msg.payload = JSON.stringify(message.payload);
+                    msg.qos = 1;
+                    msg.retain = false;
+                    node.send(msg);
+                }
             }
             
         });

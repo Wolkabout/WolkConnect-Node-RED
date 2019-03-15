@@ -8,12 +8,20 @@ module.exports = RED => {
                 password: config.password
             }
             flow.outboundMessages = flow.outboundMessages || [];
+            flow.actuatorReferences = config.actuatorReferences.split(',') || [];
             flow.connected = true;
 
-            msg.topic = `actuators/status/${flow.device.key}/SW`;
-            msg.payload = `{"status": "READY", "value": ""}`;
+            if (flow.actuatorReferences) {
+                flow.actuatorReferences.forEach(cur => {
+                    let trimmed = cur.trim()
+                    msg.topic = `actuators/status/${flow.device.key}/${trimmed}`;
+                    msg.payload = `{"status": "READY", "value": ""}`;
+                    msg.qos = 1;
+                    msg.retain = false;
+                    this.send(msg);
+                })
+            }
 
-            this.send(msg);
         })
     }
     RED.nodes.registerType('connect', connect);
