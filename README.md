@@ -15,11 +15,11 @@ NodeJs and npm can be installed either by installing binaries:
 
 Or you can install using a system's package manager:
 
-[https://nodejs.org/en/download/package-manager/](https://nodejs.org/en/download/package-manager/).
+[https://nodejs.org/en/download/package-manager/](https://nodejs.org/en/download/package-manager/)
 
 Node-Red installation instructions:
 
-[https://nodered.org/docs/getting-started/installation](https://nodered.org/docs/getting-started/installation).
+[https://nodered.org/docs/getting-started/installation](https://nodered.org/docs/getting-started/installation)
 
 ## Installation
 
