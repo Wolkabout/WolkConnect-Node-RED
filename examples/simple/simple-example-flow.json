@@ -1,8 +1,8 @@
 [
   {
-    "id": "f883a924.634888",
+    "id": "7bb4d419.28f3ec",
     "type": "inject",
-    "z": "8b7bffe2.a8516",
+    "z": "8fe2f514.8ce278",
     "name": "",
     "topic": "",
     "payload": "",
@@ -13,45 +13,43 @@
     "onceDelay": 0.1,
     "x": 120,
     "y": 160,
-    "wires": [["2c1b51c.b7c63ae"]]
+    "wires": [["72aa252b.119bac"]]
   },
   {
-    "id": "b168c25.7641b4",
+    "id": "5ff9b8c7.42f508",
     "type": "mqtt out",
-    "z": "8b7bffe2.a8516",
-    "name": "Integration",
+    "z": "8fe2f514.8ce278",
+    "name": "",
     "topic": "",
     "qos": "",
     "retain": "",
-    "broker": "fed1f646.9e36b8",
-    "x": 630,
+    "broker": "f98d13e4.d8a59",
+    "x": 610,
     "y": 200,
     "wires": []
   },
   {
-    "id": "5dc7f55d.478b2c",
+    "id": "b6bc5126.2ba34",
     "type": "publish",
-    "z": "8b7bffe2.a8516",
-    "name": "",
+    "z": "8fe2f514.8ce278",
     "x": 180,
     "y": 280,
-    "wires": [["b168c25.7641b4"]]
+    "wires": [["5ff9b8c7.42f508"]]
   },
   {
-    "id": "249128e5.5c6498",
+    "id": "9e3994ef.59d968",
     "type": "connect",
-    "z": "8b7bffe2.a8516",
-    "name": "",
+    "z": "8fe2f514.8ce278",
     "key": "",
     "password": "",
     "x": 280,
     "y": 40,
-    "wires": [["b168c25.7641b4"]]
+    "wires": [["5ff9b8c7.42f508"]]
   },
   {
-    "id": "8fbe51ee.41a39",
+    "id": "5af5eee5.8588a",
     "type": "inject",
-    "z": "8b7bffe2.a8516",
+    "z": "8fe2f514.8ce278",
     "name": "",
     "topic": "",
     "payload": "",
@@ -62,12 +60,12 @@
     "onceDelay": 0.1,
     "x": 120,
     "y": 40,
-    "wires": [["249128e5.5c6498"]]
+    "wires": [["9e3994ef.59d968"]]
   },
   {
-    "id": "4403c3df.15dafc",
+    "id": "26d10dc5.135a62",
     "type": "inject",
-    "z": "8b7bffe2.a8516",
+    "z": "8fe2f514.8ce278",
     "name": "",
     "topic": "",
     "payload": "",
@@ -78,91 +76,70 @@
     "onceDelay": 0.1,
     "x": 120,
     "y": 100,
-    "wires": [["4c7f6f10.38b27"]]
+    "wires": [["27f198b8.829978"]]
   },
   {
-    "id": "4c7f6f10.38b27",
+    "id": "27f198b8.829978",
     "type": "disconnect",
-    "z": "8b7bffe2.a8516",
-    "name": "",
-    "key": "",
-    "password": "",
+    "z": "8fe2f514.8ce278",
     "x": 290,
     "y": 100,
-    "wires": [["b168c25.7641b4"]]
+    "wires": [["5ff9b8c7.42f508"]]
   },
   {
-    "id": "dc658da8.55e51",
+    "id": "2293cc48.441f84",
     "type": "inject",
-    "z": "8b7bffe2.a8516",
+    "z": "8fe2f514.8ce278",
     "name": "",
     "topic": "",
     "payload": "",
     "payloadType": "date",
-    "repeat": "5",
+    "repeat": "900",
     "crontab": "",
     "once": true,
     "onceDelay": "",
     "x": 130,
-    "y": 380,
-    "wires": [["68a701f2.12afd"]]
+    "y": 340,
+    "wires": [["dd3d61b0.e1329"]]
   },
   {
-    "id": "68a701f2.12afd",
+    "id": "dd3d61b0.e1329",
     "type": "keepAlive",
-    "z": "8b7bffe2.a8516",
-    "name": "",
-    "key": "",
-    "password": "",
+    "z": "8fe2f514.8ce278",
     "x": 300,
-    "y": 380,
-    "wires": [["b168c25.7641b4", "e7bbb0a7.0b115"]]
+    "y": 340,
+    "wires": [["5ff9b8c7.42f508"]]
   },
   {
-    "id": "e7bbb0a7.0b115",
-    "type": "debug",
-    "z": "8b7bffe2.a8516",
-    "name": "",
-    "active": true,
-    "tosidebar": true,
-    "console": false,
-    "tostatus": false,
-    "complete": "false",
-    "x": 530,
-    "y": 380,
-    "wires": []
-  },
-  {
-    "id": "2c1b51c.b7c63ae",
+    "id": "72aa252b.119bac",
     "type": "getRandomNumber",
-    "z": "8b7bffe2.a8516",
+    "z": "8fe2f514.8ce278",
     "name": "",
     "minimum": "-20",
-    "maximum": "80",
+    "maximum": "85",
     "x": 180,
     "y": 200,
-    "wires": [["937b24ec.6f2ca8"]]
+    "wires": [["8aa79586.265a68"]]
   },
   {
-    "id": "937b24ec.6f2ca8",
+    "id": "8aa79586.265a68",
     "type": "addSensorReading",
-    "z": "8b7bffe2.a8516",
+    "z": "8fe2f514.8ce278",
     "reference": "T",
     "x": 190,
     "y": 240,
-    "wires": [["5dc7f55d.478b2c"]]
+    "wires": [["b6bc5126.2ba34"]]
   },
   {
-    "id": "fed1f646.9e36b8",
+    "id": "f98d13e4.d8a59",
     "type": "mqtt-broker",
     "z": "",
-    "name": "api-integration",
-    "broker": "api-integration.wolksense.com",
+    "name": "WolkAbout Demo",
+    "broker": "api-demo.wolkabout.com",
     "port": "1883",
-    "tls": "773d20df.db2a4",
     "clientid": "",
     "usetls": false,
-    "compatmode": false,
+    "compatmode": true,
     "keepalive": "60",
     "cleansession": true,
     "birthTopic": "",
@@ -170,23 +147,11 @@
     "birthPayload": "",
     "closeTopic": "lastwill/",
     "closeQos": "2",
+    "closeRetain": "false",
     "closePayload": "Gone offline",
     "willTopic": "lastwill/",
     "willQos": "2",
+    "willRetain": "false",
     "willPayload": "Gone offline"
-  },
-  {
-    "id": "773d20df.db2a4",
-    "type": "tls-config",
-    "z": "",
-    "name": "",
-    "cert": "",
-    "key": "",
-    "ca": "",
-    "certname": "",
-    "keyname": "",
-    "caname": "ca.crt",
-    "servername": "",
-    "verifyservercert": true
   }
 ]
