@@ -1,4 +1,3 @@
-
 module.exports = RED => {
     function connect(config) {
         RED.nodes.createNode(this, config);
