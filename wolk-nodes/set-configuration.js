@@ -12,9 +12,11 @@ module.exports = RED => {
 
             msg.payload = {
                 topic: `configurations/current/${flow.device.key}`,
-                payload: JSON.parse(this.value)
+                payload: this.value
             }
             msg.complete = true;
+
+            flow.configuration = this.value;
 
             this.send(msg);
 
