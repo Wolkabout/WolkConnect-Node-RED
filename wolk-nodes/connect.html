@@ -4,7 +4,8 @@
         color: '#00afff',
         defaults: {
             key: {value: ''},
-            password: {value: ''}
+            password: {value: ''},
+            actuatorReferences: {value: ''}
         },
         inputs: 1,
         outputs: 1,
@@ -24,8 +25,12 @@
         <label for="node-input-password"><i class="icon-tag"></i> Device Password</label>
         <input type="password" id="node-input-password" placeholder="Device Password">
     </div>
+    <div class="form-row">
+        <label for="node-input-actuatorReferences"><i class="icon-tag"></i> Actuator References (delimiter - ',')</label>
+        <input type="text" id="node-input-actuatorReferences" placeholder="Actuator References">
+    </div>
 </script>
 
 <script type="text/x-red" data-help-name="connect">
-    <p>Simulates device connecting to the platform.<br></p>
+    <p>Simulates device connecting to the platform.<br>Pass the device key, password, and actuator references (if any).<br></p>
 </script>
