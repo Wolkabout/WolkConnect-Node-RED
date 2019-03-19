@@ -17,7 +17,8 @@
             "get-random-number": "./wolk-nodes/get-random-number.js",
             "publish": "./wolk-nodes/publish.js",
             "keep-alice": "./wolk-nodes/keep-alive.js",
-            "outbound-message-queue": "./wolk-nodes/outbound-message-queue.js"
+            "outbound-message-queue": "./wolk-nodes/outbound-message-queue.js",
+            "set-actuator": "./wolk-nodes/set-actuator.js"
         }
     }
 }
