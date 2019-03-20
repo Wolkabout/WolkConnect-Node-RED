@@ -5,9 +5,9 @@ module.exports = RED => {
         flow.configurationReferences = config.configurationReferences.split(';') || [];
         flow.configurationValues = config.configurationValues.split(';') || [];
         flow.configuration = flow.configuration || {};
-        this.msgComplete = config.msgComplete;
         this.on('input', msg => {
-
+            this.msgComplete = config.msgComplete ? config.msgComplete : false;
+            
             if (flow.configurationReferences) {
                 for (let i = 0; i < flow.configurationReferences.length; i++) {
                     flow.configuration[`${flow.configurationReferences[i]}`] = flow.configurationValues[i];

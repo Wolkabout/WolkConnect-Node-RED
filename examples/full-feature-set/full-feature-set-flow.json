@@ -252,7 +252,7 @@
   },
   {
     "id": "6e6ffa1d.d912b4",
-    "type": "setActuator",
+    "type": "actuationHandler",
     "z": "dc60df1c.e4a77",
     "value": "",
     "reference": "SW",
@@ -274,7 +274,7 @@
   },
   {
     "id": "1f8c58aa.faccd7",
-    "type": "setActuator",
+    "type": "actuationHandler",
     "z": "dc60df1c.e4a77",
     "value": "",
     "reference": "SL",
@@ -349,7 +349,7 @@
   },
   {
     "id": "744d4f74.e535",
-    "type": "setConfiguration",
+    "type": "configurationHandler",
     "z": "dc60df1c.e4a77",
     "configurationReferences": "",
     "configurationValues": "",

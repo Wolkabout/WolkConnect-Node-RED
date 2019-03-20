@@ -1,5 +1,5 @@
 module.exports = RED => {
-    function setConfiguration(config) {
+    function configurationHandler(config) {
         RED.nodes.createNode(this, config);
         const flow = this.context().flow;
         flow.configuration = flow.configuration || {};
@@ -24,5 +24,5 @@ module.exports = RED => {
 
         })
     }
-    RED.nodes.registerType('setConfiguration', setConfiguration);
+    RED.nodes.registerType('configurationHandler', configurationHandler);
 }
