@@ -10,6 +10,8 @@ module.exports = RED => {
             flow.outboundMessages = flow.outboundMessages || [];
             flow.connected = true;
 
+            msg.payload = ['hello','there'];
+
             this.send(msg);
         })
     }

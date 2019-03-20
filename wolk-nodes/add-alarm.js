@@ -10,9 +10,10 @@ module.exports = RED => {
 
             if (flow.connected) {
                 msg.payload = {
+                    type: 'alarm',
                     reference: this.reference,
                     topic: `events/${flow.device.key}/${this.reference}`,
-                    payload: {data: this.value}
+                    payload: [{data: this.value}]
                 }
                 if (this.msgComplete) {
                     msg.complete = this.msgComplete;

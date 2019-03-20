@@ -4,7 +4,8 @@
         color: '#00afff',
         defaults: {
             configurationReferences: {value: ''},
-            configurationValues: {value: ''}
+            configurationValues: {value: ''},
+            msgComplete: {value: false}
         },
         inputs: 1,
         outputs: 1,
@@ -21,6 +22,10 @@
     <div class="form-row">
         <label for="node-input-configurationValues"><i class="icon-tag"></i> Configuration Values (delimiter - ';')</label>
         <input type="text" id="node-input-configurationValues" placeholder="Configuration Values">
+    </div>
+    <div class="form-row">
+        <label for="node-input-msgComplete"><i class="icon-tag"></i> Message Complete</label>
+        <input type="checkbox" style="display:inline-block; width:15px; vertical-align:baseline;" id="node-input-msgComplete">
     </div>
 </script>
 

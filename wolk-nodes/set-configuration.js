@@ -4,15 +4,17 @@ module.exports = RED => {
         const flow = this.context().flow;
         flow.configuration = flow.configuration || {};
         this.on('input', msg => {
-            this.value = config.value || msg.payload;
+            this.value = config.value || msg.payload.values;
 
             if (!flow.connected) {
                 throw new Error('Connect device to platform!');
             }
 
             msg.payload = {
+                reference: 'config',
+                type: 'configuration',
                 topic: `configurations/current/${flow.device.key}`,
-                payload: this.value
+                payload: [this.value]
             }
             msg.complete = true;
 

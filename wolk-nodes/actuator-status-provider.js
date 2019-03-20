@@ -8,10 +8,13 @@ module.exports = RED => {
             if (flow.actuatorReferences) {
                 flow.actuatorReferences.forEach(cur => {
                     let trimmed = cur.trim()
-                    msg.topic = `actuators/status/${flow.device.key}/${trimmed}`;
-                    msg.payload = `{"status": "READY", "value": ""}`;
-                    msg.qos = 1;
-                    msg.retain = false;
+                    msg.payload = {
+                        reference: `${trimmed}`,
+                        type: 'actuator',
+                        topic: `actuators/status/${flow.device.key}/${trimmed}`,
+                        payload: [{status: "READY", value: ""}]
+                    }
+                    
                     this.send(msg);
                 })
             }
