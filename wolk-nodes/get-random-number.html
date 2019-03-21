@@ -5,7 +5,8 @@
         defaults: {
             name: {value:''},
             minimum: {value: ''},
-            maximum: {value: ''}
+            maximum: {value: ''},
+            boolean: {value: false}
         },
         inputs: 1,
         outputs: 1,
@@ -28,6 +29,10 @@
     <div class="form-row">
         <label for="node-input-maximum"><i class="icon-tag"></i> Maximum value</label>
         <input type="number" id="node-input-maximum" placeholder="Maximum value">
+    </div>
+    <div class="form-row">
+        <label for="node-input-boolean"><i class="icon-tag"></i> Return Boolean</label>
+        <input type="checkbox" style="display:inline-block; width:15px; vertical-align:baseline;" id="node-input-boolean">
     </div>
 </script>
 

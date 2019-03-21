@@ -1,5 +1,5 @@
 module.exports = RED => {
-    function addSensorReading(config) {
+    function addAlarm(config) {
         RED.nodes.createNode(this, config);
         const context = this.context();
         const flow = context.flow;
@@ -11,16 +11,15 @@ module.exports = RED => {
             if (flow.connected) {
                 msg.payload = {
                     reference: this.reference,
-                    topic: `readings/${flow.device.key}/${this.reference}`,
-                    payload: this.reference === 'ACL' ? [{data: `${this.value},${this.value},${this.value}`}] : [{data: this.value}]
+                    topic: `events/${flow.device.key}/${this.reference}`,
+                    payload: {data: this.value}
                 }
                 if (this.msgComplete) {
                     msg.complete = this.msgComplete;
                 }
-    
                 this.send(msg);
             }
         });
     }
-    RED.nodes.registerType('addSensorReading', addSensorReading);
+    RED.nodes.registerType('addAlarm', addAlarm);
 }
