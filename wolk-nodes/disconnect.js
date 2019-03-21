@@ -4,8 +4,8 @@ module.exports = RED => {
         const flow = this.context().flow;
         this.on('input', msg => {
             flow.connected = false;
-            msg.topic = `lastwill/${flow.device.key}`
-            msg.payload = 'Gone offline'
+            msg.topic = `lastwill/${flow.device.key}`;
+            msg.payload = 'Gone offline';
             this.send(msg);
         })
     }

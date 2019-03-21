@@ -6,7 +6,9 @@
             name: {value:''},
             minimum: {value: ''},
             maximum: {value: ''},
-            boolean: {value: false}
+            readingsAmount: {value: ''},
+            boolean: {value: false},
+            threshold : {value: 50}
         },
         inputs: 1,
         outputs: 1,
@@ -31,8 +33,16 @@
         <input type="number" id="node-input-maximum" placeholder="Maximum value">
     </div>
     <div class="form-row">
+        <label for="node-input-readingsAmount"><i class="icon-tag"></i> Readings Amount</label>
+        <input type="number" id="node-input-readingsAmount">
+    </div>
+    <div class="form-row">
         <label for="node-input-boolean"><i class="icon-tag"></i> Return Boolean</label>
         <input type="checkbox" style="display:inline-block; width:15px; vertical-align:baseline;" id="node-input-boolean">
+    </div>
+    <div class="form-row">
+        <label for="node-input-threshold"><i class="icon-tag"></i> Boolean True Threshold</label>
+        <input type="number" id="node-input-threshold">
     </div>
 </script>
 
