@@ -16,6 +16,7 @@ module.exports = RED => {
                 topic: `actuators/status/${flow.device.key}/${this.reference}`,
                 payload: {status: "READY", value: JSON.parse(this.value).value}
             }
+            msg.complete = true;
 
             this.send(msg);
         });
