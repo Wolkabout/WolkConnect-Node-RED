@@ -56,6 +56,8 @@ Pass device key and password to the ```connect``` node.
 
 Pass actuator references and configuration references to ```actuatorStatusProvider``` and ```configurationProvider``` nodes.
 
+Check the message complete checkbox on the last node connected to the same ```inject``` node.
+
 Deploy the flow.
 
 #### Connecting
@@ -63,8 +65,6 @@ Deploy the flow.
 Connect to the platform by running the ```inject``` (timestamp) node connected to the ```connect``` node.
 
 The ```connect``` node automatically calls ```actuatorStatusProvider``` and ```configurationProvider```  to publish user-provided actuator statues and configuration to the platform.
-
-Check the message complete checkbox on the last node connected to the same ```inject``` node.
 
 ### Adding sensor readings
 

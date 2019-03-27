@@ -48,6 +48,8 @@ Edit WolkAbout Demo server in ```mqtt``` node properties:
 
 Pass device key and password to the ```connect``` node.
 
+Check the message complete checkbox on the last node connected to the same ```inject``` node.
+
 Deploy the flow.
 
 Connect to the platform by running the inject (timestamp) node connected to ```connect``` node.
