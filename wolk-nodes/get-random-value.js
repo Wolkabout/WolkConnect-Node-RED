@@ -1,5 +1,5 @@
 module.exports = RED => {
-    function getRandomNumber(config) {
+    function getRandomValue(config) {
         RED.nodes.createNode(this, config);
         const context = this.context();
         this.minimum = Number(config.minimum);
@@ -30,5 +30,5 @@ module.exports = RED => {
             this.send(msg);
         });
     }
-    RED.nodes.registerType('getRandomNumber', getRandomNumber);
+    RED.nodes.registerType('getRandomValue', getRandomValue);
 }
