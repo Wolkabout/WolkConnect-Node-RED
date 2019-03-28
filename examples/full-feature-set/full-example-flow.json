@@ -1,6 +1,6 @@
 [
   {
-    "id": "532e65f4.2d423c",
+    "id": "811276bd.47f1c8",
     "type": "inject",
     "z": "182314be.924a5b",
     "name": "",
@@ -11,20 +11,20 @@
     "crontab": "",
     "once": false,
     "onceDelay": "0",
-    "x": 100,
+    "x": 120,
     "y": 200,
     "wires": [
       [
-        "61f0fdca.ac6974",
-        "1c4bd4c4.1ae5eb",
-        "ab8f1115.1a689",
-        "d90458dd.a88928",
-        "7e1ae819.a51658"
+        "6414ca22.dc1d04",
+        "8f1a5e48.e8209",
+        "f1e85c35.db939",
+        "7b2d580c.439d08",
+        "8c6c620d.c5da3"
       ]
     ]
   },
   {
-    "id": "23c2b00c.1b609",
+    "id": "e82596a3.eadfe8",
     "type": "inject",
     "z": "182314be.924a5b",
     "name": "",
@@ -35,12 +35,12 @@
     "crontab": "",
     "once": false,
     "onceDelay": 0.1,
-    "x": 100,
+    "x": 120,
     "y": 40,
-    "wires": [["2d6bc1aa.a3441e"]]
+    "wires": [["99cd53c9.e135f"]]
   },
   {
-    "id": "8e5d33fd.d55fc",
+    "id": "f2c28937.f7f888",
     "type": "inject",
     "z": "182314be.924a5b",
     "name": "",
@@ -51,23 +51,23 @@
     "crontab": "",
     "once": false,
     "onceDelay": 0.1,
-    "x": 100,
+    "x": 120,
     "y": 120,
-    "wires": [["b58a7a30.75d3d8"]]
+    "wires": [["233eea74.90b266"]]
   },
   {
-    "id": "b58a7a30.75d3d8",
+    "id": "233eea74.90b266",
     "type": "disconnect",
     "z": "182314be.924a5b",
     "name": "",
     "key": "",
     "password": "",
-    "x": 370,
+    "x": 390,
     "y": 120,
-    "wires": [["2f0f7f27.78bed"]]
+    "wires": [["bf9ea6f3.e086b8"]]
   },
   {
-    "id": "45b2a8fd.864738",
+    "id": "6d3b9f7a.21edf",
     "type": "inject",
     "z": "182314be.924a5b",
     "name": "",
@@ -78,66 +78,66 @@
     "crontab": "",
     "once": false,
     "onceDelay": "",
-    "x": 110,
+    "x": 130,
     "y": 160,
-    "wires": [["ca95dc75.90578"]]
+    "wires": [["fac10969.8df5e8"]]
   },
   {
-    "id": "ca95dc75.90578",
+    "id": "fac10969.8df5e8",
     "type": "keepAlive",
     "z": "182314be.924a5b",
     "name": "",
-    "x": 360,
+    "x": 380,
     "y": 160,
-    "wires": [["2f0f7f27.78bed"]]
+    "wires": [["bf9ea6f3.e086b8"]]
   },
   {
-    "id": "e87e88ce.caf938",
+    "id": "4b0f87ba.9fa548",
     "type": "addSensorReading",
     "z": "182314be.924a5b",
     "value": "",
     "reference": "T",
     "msgComplete": false,
     "timestamp": true,
-    "x": 390,
+    "x": 410,
     "y": 240,
-    "wires": [["a65348d5.dc5058"]]
+    "wires": [["b6cb52ae.663df"]]
   },
   {
-    "id": "77fce4aa.b745cc",
+    "id": "e9db2eb0.4215f",
     "type": "addSensorReading",
     "z": "182314be.924a5b",
     "value": "",
     "reference": "H",
     "msgComplete": false,
     "timestamp": true,
-    "x": 390,
+    "x": 410,
     "y": 320,
-    "wires": [["a65348d5.dc5058"]]
+    "wires": [["b6cb52ae.663df"]]
   },
   {
-    "id": "5b710b8a.8adf54",
+    "id": "23aea903.d0f406",
     "type": "addSensorReading",
     "z": "182314be.924a5b",
     "value": "",
     "reference": "P",
     "msgComplete": false,
     "timestamp": true,
-    "x": 390,
+    "x": 410,
     "y": 400,
-    "wires": [["a65348d5.dc5058"]]
+    "wires": [["b6cb52ae.663df"]]
   },
   {
-    "id": "e72dcd97.593bf",
+    "id": "e5e07e5f.45593",
     "type": "outboundMessageQueue",
     "z": "182314be.924a5b",
     "maxData": "5",
-    "x": 930,
+    "x": 950,
     "y": 440,
-    "wires": [["e39d0057.9c10f", "f3f2c80.a97b238"]]
+    "wires": [["5e5b0008.ed906"]]
   },
   {
-    "id": "2f0f7f27.78bed",
+    "id": "bf9ea6f3.e086b8",
     "type": "mqtt out",
     "z": "182314be.924a5b",
     "name": "",
@@ -145,21 +145,21 @@
     "qos": "",
     "retain": "",
     "broker": "4ed39552.e1366c",
-    "x": 1130,
+    "x": 1150,
     "y": 280,
     "wires": []
   },
   {
-    "id": "e39d0057.9c10f",
+    "id": "5e5b0008.ed906",
     "type": "publish",
     "z": "182314be.924a5b",
     "name": "",
-    "x": 880,
+    "x": 900,
     "y": 400,
-    "wires": [["8b8951ad.737a8"]]
+    "wires": [["abe52679.39f2a8"]]
   },
   {
-    "id": "a65348d5.dc5058",
+    "id": "b6cb52ae.663df",
     "type": "join",
     "z": "182314be.924a5b",
     "name": "",
@@ -178,24 +178,24 @@
     "reduceInit": "",
     "reduceInitType": "",
     "reduceFixup": "",
-    "x": 730,
+    "x": 750,
     "y": 440,
-    "wires": [["e72dcd97.593bf"]]
+    "wires": [["e5e07e5f.45593"]]
   },
   {
-    "id": "f1e79768.6212a8",
+    "id": "570bcd7f.e0cba4",
     "type": "addSensorReading",
     "z": "182314be.924a5b",
     "value": "",
     "reference": "ACL",
     "msgComplete": false,
     "timestamp": true,
-    "x": 390,
+    "x": 410,
     "y": 480,
-    "wires": [["a65348d5.dc5058"]]
+    "wires": [["b6cb52ae.663df"]]
   },
   {
-    "id": "e55bcb4.b43c138",
+    "id": "b9ae70b1.2390b",
     "type": "mqtt in",
     "z": "182314be.924a5b",
     "name": "",
@@ -203,34 +203,34 @@
     "qos": "2",
     "datatype": "auto",
     "broker": "4ed39552.e1366c",
-    "x": 160,
+    "x": 180,
     "y": 760,
-    "wires": [["5d1e6752.9593f8"]]
+    "wires": [["4b4109af.f36818"]]
   },
   {
-    "id": "f7d65610.d02dc8",
+    "id": "c4de9c55.31cf2",
     "type": "actuationHandler",
     "z": "182314be.924a5b",
     "value": "",
     "reference": "SL",
     "returnValue": true,
     "msgComplete": true,
-    "x": 530,
+    "x": 550,
     "y": 760,
-    "wires": [["a65348d5.dc5058"]]
+    "wires": [["b6cb52ae.663df"]]
   },
   {
-    "id": "2d6bc1aa.a3441e",
+    "id": "99cd53c9.e135f",
     "type": "connect",
     "z": "182314be.924a5b",
     "key": "",
     "password": "",
-    "x": 360,
+    "x": 380,
     "y": 40,
-    "wires": [["7e6e1520.5be6dc", "2398ebba.ae5a24"]]
+    "wires": [["373b3504.d970ba", "a0acb353.a74d2"]]
   },
   {
-    "id": "d21bac11.7a924",
+    "id": "159f891f.e66157",
     "type": "addAlarm",
     "z": "182314be.924a5b",
     "name": "",
@@ -238,56 +238,56 @@
     "reference": "HH",
     "msgComplete": true,
     "timestamp": true,
-    "x": 360,
+    "x": 380,
     "y": 560,
-    "wires": [["a65348d5.dc5058"]]
+    "wires": [["b6cb52ae.663df"]]
   },
   {
-    "id": "2398ebba.ae5a24",
+    "id": "a0acb353.a74d2",
     "type": "actuatorStatusProvider",
     "z": "182314be.924a5b",
     "actuatorReferences": "SW; SL",
-    "x": 560,
+    "x": 580,
     "y": 40,
-    "wires": [["a65348d5.dc5058"]]
+    "wires": [["b6cb52ae.663df"]]
   },
   {
-    "id": "7e6e1520.5be6dc",
+    "id": "373b3504.d970ba",
     "type": "configurationProvider",
     "z": "182314be.924a5b",
     "configurationReferences": "config_1;config_2;config_3;config_4;",
     "configurationValues": "0;false;configuration_3;configuration_4a,configuration_4b,configuration_4c",
     "msgComplete": true,
-    "x": 560,
+    "x": 580,
     "y": 80,
-    "wires": [["a65348d5.dc5058"]]
+    "wires": [["b6cb52ae.663df"]]
   },
   {
-    "id": "8b8951ad.737a8",
+    "id": "abe52679.39f2a8",
     "type": "json",
     "z": "182314be.924a5b",
     "name": "",
     "property": "payload",
     "action": "",
     "pretty": false,
-    "x": 870,
+    "x": 890,
     "y": 360,
-    "wires": [["2f0f7f27.78bed"]]
+    "wires": [["bf9ea6f3.e086b8"]]
   },
   {
-    "id": "5d1e6752.9593f8",
+    "id": "4b4109af.f36818",
     "type": "json",
     "z": "182314be.924a5b",
     "name": "",
     "property": "payload",
     "action": "",
     "pretty": false,
-    "x": 370,
+    "x": 390,
     "y": 760,
-    "wires": [["f7d65610.d02dc8"]]
+    "wires": [["c4de9c55.31cf2"]]
   },
   {
-    "id": "2133e1f0.2844ae",
+    "id": "ea986414.8dde98",
     "type": "mqtt in",
     "z": "182314be.924a5b",
     "name": "",
@@ -295,36 +295,36 @@
     "qos": "2",
     "datatype": "auto",
     "broker": "4ed39552.e1366c",
-    "x": 160,
+    "x": 180,
     "y": 820,
-    "wires": [["4f0653ce.de596c"]]
+    "wires": [["b204726.e43479"]]
   },
   {
-    "id": "892349ea.94bf48",
+    "id": "734fc5a5.baa1cc",
     "type": "actuationHandler",
     "z": "182314be.924a5b",
     "value": "",
     "reference": "SW",
     "returnValue": true,
     "msgComplete": true,
-    "x": 530,
+    "x": 550,
     "y": 820,
-    "wires": [["a65348d5.dc5058"]]
+    "wires": [["b6cb52ae.663df"]]
   },
   {
-    "id": "4f0653ce.de596c",
+    "id": "b204726.e43479",
     "type": "json",
     "z": "182314be.924a5b",
     "name": "",
     "property": "payload",
     "action": "",
     "pretty": false,
-    "x": 370,
+    "x": 390,
     "y": 820,
-    "wires": [["892349ea.94bf48"]]
+    "wires": [["734fc5a5.baa1cc"]]
   },
   {
-    "id": "946ae4a5.0ad018",
+    "id": "bf804990.206e28",
     "type": "mqtt in",
     "z": "182314be.924a5b",
     "name": "",
@@ -332,59 +332,59 @@
     "qos": "2",
     "datatype": "auto",
     "broker": "4ed39552.e1366c",
-    "x": 160,
+    "x": 180,
     "y": 880,
-    "wires": [["229468a8.64e968"]]
+    "wires": [["32d591b1.9cdbce"]]
   },
   {
-    "id": "e53d0a7c.be63f8",
+    "id": "553275c3.cf0fac",
     "type": "configurationHandler",
     "z": "182314be.924a5b",
     "configurationReferences": "",
     "configurationValues": "",
     "msgComplete": true,
-    "x": 540,
+    "x": 560,
     "y": 880,
-    "wires": [["a65348d5.dc5058"]]
+    "wires": [["b6cb52ae.663df"]]
   },
   {
-    "id": "229468a8.64e968",
+    "id": "32d591b1.9cdbce",
     "type": "json",
     "z": "182314be.924a5b",
     "name": "",
     "property": "payload",
     "action": "",
     "pretty": false,
-    "x": 370,
+    "x": 390,
     "y": 880,
-    "wires": [["e53d0a7c.be63f8"]]
+    "wires": [["553275c3.cf0fac"]]
   },
   {
-    "id": "1a45a3bc.beffcc",
+    "id": "ff5aff31.7af67",
     "type": "actuationHandler",
     "z": "182314be.924a5b",
     "value": "",
     "reference": "SW",
     "returnValue": false,
     "msgComplete": false,
-    "x": 390,
+    "x": 410,
     "y": 640,
-    "wires": [["a65348d5.dc5058"]]
+    "wires": [["b6cb52ae.663df"]]
   },
   {
-    "id": "d600e3dd.cc687",
+    "id": "384ef9ec.4b9426",
     "type": "actuationHandler",
     "z": "182314be.924a5b",
     "value": "",
     "reference": "SL",
     "returnValue": false,
     "msgComplete": true,
-    "x": 390,
+    "x": 410,
     "y": 720,
-    "wires": [["a65348d5.dc5058"]]
+    "wires": [["b6cb52ae.663df"]]
   },
   {
-    "id": "ed81f043.9c2a7",
+    "id": "ba01b4fa.71a188",
     "type": "inject",
     "z": "182314be.924a5b",
     "name": "",
@@ -395,26 +395,12 @@
     "crontab": "",
     "once": false,
     "onceDelay": 0.1,
-    "x": 100,
+    "x": 120,
     "y": 600,
-    "wires": [["1675087a.857928", "ab039963.884278"]]
+    "wires": [["81c02aed.8116a8", "7b0246ed.e10fa8"]]
   },
   {
-    "id": "f3f2c80.a97b238",
-    "type": "debug",
-    "z": "182314be.924a5b",
-    "name": "",
-    "active": true,
-    "tosidebar": true,
-    "console": false,
-    "tostatus": false,
-    "complete": "false",
-    "x": 1190,
-    "y": 440,
-    "wires": []
-  },
-  {
-    "id": "61f0fdca.ac6974",
+    "id": "6414ca22.dc1d04",
     "type": "getRandomValue",
     "z": "182314be.924a5b",
     "name": "",
@@ -423,12 +409,12 @@
     "readingsAmount": 1,
     "boolean": false,
     "threshold": 50,
-    "x": 390,
+    "x": 410,
     "y": 200,
-    "wires": [["e87e88ce.caf938"]]
+    "wires": [["4b0f87ba.9fa548"]]
   },
   {
-    "id": "1c4bd4c4.1ae5eb",
+    "id": "8f1a5e48.e8209",
     "type": "getRandomValue",
     "z": "182314be.924a5b",
     "name": "",
@@ -437,12 +423,12 @@
     "readingsAmount": 1,
     "boolean": false,
     "threshold": 50,
-    "x": 390,
+    "x": 410,
     "y": 280,
-    "wires": [["77fce4aa.b745cc"]]
+    "wires": [["e9db2eb0.4215f"]]
   },
   {
-    "id": "ab8f1115.1a689",
+    "id": "f1e85c35.db939",
     "type": "getRandomValue",
     "z": "182314be.924a5b",
     "name": "",
@@ -451,12 +437,12 @@
     "readingsAmount": 1,
     "boolean": false,
     "threshold": 50,
-    "x": 390,
+    "x": 410,
     "y": 360,
-    "wires": [["5b710b8a.8adf54"]]
+    "wires": [["23aea903.d0f406"]]
   },
   {
-    "id": "d90458dd.a88928",
+    "id": "7b2d580c.439d08",
     "type": "getRandomValue",
     "z": "182314be.924a5b",
     "name": "",
@@ -465,12 +451,12 @@
     "readingsAmount": "3",
     "boolean": false,
     "threshold": 50,
-    "x": 389,
+    "x": 409,
     "y": 440,
-    "wires": [["f1e79768.6212a8"]]
+    "wires": [["570bcd7f.e0cba4"]]
   },
   {
-    "id": "7e1ae819.a51658",
+    "id": "8c6c620d.c5da3",
     "type": "getRandomValue",
     "z": "182314be.924a5b",
     "name": "",
@@ -479,12 +465,12 @@
     "readingsAmount": 1,
     "boolean": true,
     "threshold": "70",
-    "x": 390,
+    "x": 410,
     "y": 520,
-    "wires": [["d21bac11.7a924"]]
+    "wires": [["159f891f.e66157"]]
   },
   {
-    "id": "1675087a.857928",
+    "id": "81c02aed.8116a8",
     "type": "getRandomValue",
     "z": "182314be.924a5b",
     "name": "",
@@ -493,12 +479,12 @@
     "readingsAmount": 1,
     "boolean": true,
     "threshold": "50",
-    "x": 390,
+    "x": 410,
     "y": 600,
-    "wires": [["1a45a3bc.beffcc"]]
+    "wires": [["ff5aff31.7af67"]]
   },
   {
-    "id": "ab039963.884278",
+    "id": "7b0246ed.e10fa8",
     "type": "getRandomValue",
     "z": "182314be.924a5b",
     "name": "",
@@ -507,9 +493,9 @@
     "readingsAmount": 1,
     "boolean": false,
     "threshold": "50",
-    "x": 390,
+    "x": 410,
     "y": 680,
-    "wires": [["d600e3dd.cc687"]]
+    "wires": [["384ef9ec.4b9426"]]
   },
   {
     "id": "4ed39552.e1366c",
