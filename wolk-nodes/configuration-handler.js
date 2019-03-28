@@ -3,7 +3,6 @@ module.exports = RED => {
         RED.nodes.createNode(this, config);
         const flow = this.context().flow;
         this.msgComplete = config.msgComplete;
-        flow.configuration = flow.configuration ? flow.configuration : {};
         this.on('input', msg => {
             this.value = config.value ? config.value : msg.payload.values;
 
@@ -18,8 +17,6 @@ module.exports = RED => {
                 if (this.msgComplete) {
                     msg.complete = true;
                 }
-    
-                flow.configuration = this.value;
     
                 this.send(msg);
             }
