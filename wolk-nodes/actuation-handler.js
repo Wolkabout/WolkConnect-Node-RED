@@ -9,7 +9,9 @@ module.exports = RED => {
         this.on('input', msg => {
             this.value = config.value ? config.returnValue : msg.payload;
 
-            if (flow.connected) {
+            if (!flow.connected) {
+                throw new Error('Please connect device to platform');
+            } else {
                 msg.payload = {
                     type: 'actuator',
                     reference: this.reference,

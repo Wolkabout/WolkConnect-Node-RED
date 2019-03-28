@@ -5,24 +5,21 @@ module.exports = RED => {
         const flow = context.flow;
         const maxData = parseInt(config.maxData, 10);
         this.on('input', msg => {
-
-            if (flow.connected) {
-                msg.payload.forEach(cur => {
-                    let existing = flow.outboundMessages.find(el => el.reference === cur.reference);
-                    if(!!existing) {
-                        if (existing.payload.length < maxData) {
-                            existing.payload = [...cur.payload, ...existing.payload];
-                        } else if (existing.payload.length === maxData) {
-                            existing.payload.pop();
-                            existing.payload = [...cur.payload, ...existing.payload];
-                        } else {
-                            existing.payload = [...cur.payload];
-                        }
+            msg.payload.forEach(cur => {
+                let existing = flow.outboundMessages.find(el => el.reference === cur.reference);
+                if(!!existing) {
+                    if (existing.payload.length < maxData) {
+                        existing.payload = [...cur.payload, ...existing.payload];
+                    } else if (existing.payload.length === maxData) {
+                        existing.payload.pop();
+                        existing.payload = [...cur.payload, ...existing.payload];
                     } else {
-                        flow.outboundMessages.unshift(cur);
+                        existing.payload = [...cur.payload];
                     }
-                });
-            }
+                } else {
+                    flow.outboundMessages.unshift(cur);
+                }
+            });
 
             msg.payload = flow.outboundMessages;
             this.send(msg);
