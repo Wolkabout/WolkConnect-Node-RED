@@ -3,7 +3,7 @@ module.exports = RED => {
         RED.nodes.createNode(this, config);
         const context = this.context();
         const flow = context.flow;
-        const maxData = parseInt(config.maxData, 10) || 1;
+        const maxData = parseInt(config.maxData, 10);
         this.on('input', msg => {
 
             if (flow.connected) {

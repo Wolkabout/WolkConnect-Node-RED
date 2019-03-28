@@ -5,9 +5,10 @@ module.exports = RED => {
         const flow = context.flow;
         this.reference = config.reference;
         this.msgComplete = config.msgComplete;
-        this.timestamp = config.timestamp ? config.timestamp : false;
+        this.timestamp = config.timestamp;
         this.on('input', msg => {
             this.value = config.value ? config.value : msg.payload;
+            
             if (flow.connected) {
                 msg.payload = {
                     type: 'sensor',

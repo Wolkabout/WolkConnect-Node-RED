@@ -7,9 +7,12 @@ module.exports = RED => {
                 key: config.key,
                 password: config.password
             }
-            flow.outboundMessages = flow.outboundMessages || [];
+            flow.outboundMessages = flow.outboundMessages ? flow.outboundMessages : [];
             flow.connected = true;
 
+            msg.topic = `ping/${flow.device.key}`;
+            msg.payload = '{"data": "true"}';
+            
             this.send(msg);
         })
     }

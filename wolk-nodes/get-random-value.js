@@ -4,7 +4,7 @@ module.exports = RED => {
         const context = this.context();
         this.minimum = Number(config.minimum);
         this.maximum = Number(config.maximum);
-        this.readingsAmount = config.readingsAmount ? parseInt(config.readingsAmount, 10) : 1;
+        this.readingsAmount = parseInt(config.readingsAmount, 10);
         this.boolean = config.boolean;
         this.threshold = config.threshold,
         this.on('input', msg => {

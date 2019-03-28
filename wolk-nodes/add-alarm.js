@@ -4,7 +4,8 @@ module.exports = RED => {
         const context = this.context();
         const flow = context.flow;
         this.reference = config.reference;
-        this.msgComplete = config.msgComplete ? config.msgComplete : false;
+        this.timestamp = config.timestamp;
+        this.msgComplete = config.msgComplete;
         this.on('input', msg => {
             this.value = config.value ? config.value : msg.payload;
 

@@ -3,7 +3,7 @@
         category: 'WolkConnect',
         color: '#00afff',
         defaults: {
-            maxData: {maxData:''}
+            maxData: {maxData: 1}
         },
         inputs: 1,
         outputs: 1,
@@ -15,7 +15,7 @@
 <script type="text/x-red" data-template-name="outboundMessageQueue">
     <div class="form-row">
         <label for="node-input-maxData"><i class="icon-tag"></i> Max Sensor Readings</label>
-        <input type="text" id="node-input-maxData" placeholder="Max Readings">
+        <input type="number" id="node-input-maxData" placeholder="Max Readings">
     </div>
 </script>
 

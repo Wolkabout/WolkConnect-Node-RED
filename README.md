@@ -59,8 +59,7 @@ The ```mqtt``` node connects to the broker automatically on each deploy, the ```
 ### Adding sensor readings
 
 Add sensor reading by using ```addSensorReading``` node and passing it value and reference.<br>
-```getRandomNumber``` node can be used to pass random values to ```addSensorReading```. It has to be provided with minimum and maximum reading values.<br>
-If you are using ```getRandomNumber```, do not pass the value parameter to ```addSensorReading```.
+```getRandomValue``` node can be used to pass random values to ```addSensorReading```. It has to be provided with minimum and maximum reading values.
 
 ### Data publish strategy
 

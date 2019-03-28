@@ -5,14 +5,16 @@
         defaults: {
             name: {name: ''},
             value: {value:''},
-            reference: {value: ''},
+            reference: {value: '', required: true},
             msgComplete: {value: false},
             timestamp: {value: false}
         },
         inputs: 1,
         outputs: 1,
         icon: 'logo.png',
-        label: 'addSensorReading'
+        label: function() {
+            return this.name || 'addSensorReading';
+        }
     });
 </script>
 

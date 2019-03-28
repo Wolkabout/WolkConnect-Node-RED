@@ -3,8 +3,9 @@
         category: 'WolkConnect',
         color: '#00afff',
         defaults: {
-            configurationReferences: {value: ''},
-            configurationValues: {value: ''},
+            name: {value: ''},
+            configurationReferences: {value: '', required: true},
+            configurationValues: {value: '', required: true},
             msgComplete: {value: false}
         },
         inputs: 1,
@@ -15,6 +16,10 @@
 </script>
 
 <script type="text/x-red" data-template-name="configurationProvider">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
     <div class="form-row">
         <label for="node-input-configurationReferences"><i class="icon-tag"></i> Configuration References (delimiter - ';')</label>
         <input type="text" id="node-input-configurationReferences" placeholder="Configuration References">

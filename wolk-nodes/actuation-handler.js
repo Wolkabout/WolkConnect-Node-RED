@@ -5,9 +5,9 @@ module.exports = RED => {
         const flow = context.flow;
         this.reference = config.reference;
         this.returnValue = config.returnValue;
+        this.msgComplete = config.msgComplete;
         this.on('input', msg => {
-            this.msgComplete = config.msgComplete ? config.msgComplete : false;
-            this.value = config.value || msg.payload;
+            this.value = config.value ? config.returnValue : msg.payload;
 
             if (!flow.connected) {
                 throw new Error('Connect device to platform!');

@@ -15,11 +15,11 @@
     "y": 200,
     "wires": [
       [
-        "8ba672b3.16402",
-        "83819e0.8fb8f6",
-        "abae8a50.b59358",
-        "c18290c4.6722c",
-        "d5aea37f.2f6af"
+        "61f0fdca.ac6974",
+        "1c4bd4c4.1ae5eb",
+        "ab8f1115.1a689",
+        "d90458dd.a88928",
+        "7e1ae819.a51658"
       ]
     ]
   },
@@ -87,8 +87,6 @@
     "type": "keepAlive",
     "z": "182314be.924a5b",
     "name": "",
-    "key": "",
-    "password": "",
     "x": 360,
     "y": 160,
     "wires": [["2f0f7f27.78bed"]]
@@ -136,7 +134,7 @@
     "maxData": "5",
     "x": 930,
     "y": 440,
-    "wires": [["e39d0057.9c10f"]]
+    "wires": [["e39d0057.9c10f", "f3f2c80.a97b238"]]
   },
   {
     "id": "2f0f7f27.78bed",
@@ -235,10 +233,11 @@
     "id": "d21bac11.7a924",
     "type": "addAlarm",
     "z": "182314be.924a5b",
+    "name": "",
     "value": "",
     "reference": "HH",
     "msgComplete": true,
-    "timestamp": false,
+    "timestamp": true,
     "x": 360,
     "y": 560,
     "wires": [["a65348d5.dc5058"]]
@@ -249,7 +248,7 @@
     "z": "182314be.924a5b",
     "actuatorReferences": "SW; SL",
     "x": 560,
-    "y": 80,
+    "y": 40,
     "wires": [["a65348d5.dc5058"]]
   },
   {
@@ -260,7 +259,7 @@
     "configurationValues": "0;false;configuration_3;configuration_4a,configuration_4b,configuration_4c",
     "msgComplete": true,
     "x": 560,
-    "y": 40,
+    "y": 80,
     "wires": [["a65348d5.dc5058"]]
   },
   {
@@ -343,6 +342,7 @@
     "z": "182314be.924a5b",
     "configurationReferences": "",
     "configurationValues": "",
+    "msgComplete": true,
     "x": 540,
     "y": 880,
     "wires": [["a65348d5.dc5058"]]
@@ -397,16 +397,30 @@
     "onceDelay": 0.1,
     "x": 100,
     "y": 600,
-    "wires": [["d71d9586.8c3a98", "5e9480b8.f0d9d"]]
+    "wires": [["1675087a.857928", "ab039963.884278"]]
   },
   {
-    "id": "8ba672b3.16402",
+    "id": "f3f2c80.a97b238",
+    "type": "debug",
+    "z": "182314be.924a5b",
+    "name": "",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "false",
+    "x": 1190,
+    "y": 440,
+    "wires": []
+  },
+  {
+    "id": "61f0fdca.ac6974",
     "type": "getRandomValue",
     "z": "182314be.924a5b",
     "name": "",
     "minimum": "-40",
-    "maximum": "85",
-    "readingsAmount": "",
+    "maximum": "80",
+    "readingsAmount": 1,
     "boolean": false,
     "threshold": 50,
     "x": 390,
@@ -414,13 +428,13 @@
     "wires": [["e87e88ce.caf938"]]
   },
   {
-    "id": "83819e0.8fb8f6",
+    "id": "1c4bd4c4.1ae5eb",
     "type": "getRandomValue",
     "z": "182314be.924a5b",
     "name": "",
     "minimum": "0",
     "maximum": "100",
-    "readingsAmount": "",
+    "readingsAmount": 1,
     "boolean": false,
     "threshold": 50,
     "x": 390,
@@ -428,21 +442,21 @@
     "wires": [["77fce4aa.b745cc"]]
   },
   {
-    "id": "abae8a50.b59358",
+    "id": "ab8f1115.1a689",
     "type": "getRandomValue",
     "z": "182314be.924a5b",
     "name": "",
     "minimum": "300",
     "maximum": "1100",
-    "readingsAmount": "",
+    "readingsAmount": 1,
     "boolean": false,
     "threshold": 50,
-    "x": 389,
+    "x": 390,
     "y": 360,
     "wires": [["5b710b8a.8adf54"]]
   },
   {
-    "id": "c18290c4.6722c",
+    "id": "d90458dd.a88928",
     "type": "getRandomValue",
     "z": "182314be.924a5b",
     "name": "",
@@ -451,18 +465,18 @@
     "readingsAmount": "3",
     "boolean": false,
     "threshold": 50,
-    "x": 390,
+    "x": 389,
     "y": 440,
     "wires": [["f1e79768.6212a8"]]
   },
   {
-    "id": "d5aea37f.2f6af",
+    "id": "7e1ae819.a51658",
     "type": "getRandomValue",
     "z": "182314be.924a5b",
     "name": "",
     "minimum": "0",
     "maximum": "100",
-    "readingsAmount": "",
+    "readingsAmount": 1,
     "boolean": true,
     "threshold": "70",
     "x": 390,
@@ -470,30 +484,30 @@
     "wires": [["d21bac11.7a924"]]
   },
   {
-    "id": "d71d9586.8c3a98",
+    "id": "1675087a.857928",
     "type": "getRandomValue",
     "z": "182314be.924a5b",
     "name": "",
     "minimum": "0",
     "maximum": "100",
-    "readingsAmount": "",
+    "readingsAmount": 1,
     "boolean": true,
-    "threshold": 50,
+    "threshold": "50",
     "x": 390,
     "y": 600,
     "wires": [["1a45a3bc.beffcc"]]
   },
   {
-    "id": "5e9480b8.f0d9d",
+    "id": "ab039963.884278",
     "type": "getRandomValue",
     "z": "182314be.924a5b",
     "name": "",
     "minimum": "0",
     "maximum": "100",
-    "readingsAmount": "",
+    "readingsAmount": 1,
     "boolean": false,
-    "threshold": 50,
-    "x": 388,
+    "threshold": "50",
+    "x": 390,
     "y": 680,
     "wires": [["d600e3dd.cc687"]]
   },

@@ -69,14 +69,14 @@ The ```connect``` node automatically calls ```actuatorStatusProvider``` and ```c
 ### Adding sensor readings
 
 Add sensor reading by using ```addSensorReading``` node and passing it value and reference.<br>
-```getRandomNumber``` node can be used to pass random values to ```addSensorReading```. It has to be provided with minimum and maximum reading values.
+```getRandomValue``` node can be used to pass random values to ```addSensorReading```. It has to be provided with minimum and maximum reading values.
 
-Add a multi-value sensor reading by passing ```getRandomNumber``` readings amount value.
+Add a multi-value sensor reading by passing ```getRandomValue``` readings amount value.
 
 ### Adding events
 
-Add alarms by using ```addAlarm``` node. You can pass it a value and reference, or use ```getRandomNumber``` to generate random values.<br>
-```getRandomNumber``` can return boolean if corresponding checkbox selected. You can also fine-tune threshold for detecting boolean values by using boolean true threshold parameter.
+Add alarms by using ```addAlarm``` node. You can pass it a value and reference, or use ```getRandomValue``` to generate random values.<br>
+```getRandomValue``` can return boolean if corresponding checkbox selected. You can also fine-tune threshold for detecting boolean values by using boolean true threshold parameter.
 
 ### Data publish strategy
 
@@ -85,7 +85,7 @@ Stored sensor readings are pushed to WolkAbout IoT platform on demand by using t
 ### Publishing actuator statuses
 
 Use ```actuationHandler``` node to publish new actuator data to the platform, or return data when the platform changes it.<br>
-It can also be used with ```getRandomNumber``` node with return boolean or numerical value.<br>
+It can also be used with ```getRandomValue``` node with return boolean or numerical value.<br>
 Check return value chekbox when passing data back to the platform.
 
 ### Publishing configuration
