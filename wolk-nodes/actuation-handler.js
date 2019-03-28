@@ -9,22 +9,20 @@ module.exports = RED => {
         this.on('input', msg => {
             this.value = config.value ? config.returnValue : msg.payload;
 
-            if (!flow.connected) {
-                throw new Error('Connect device to platform!');
+            if (flow.connected) {
+                msg.payload = {
+                    type: 'actuator',
+                    reference: this.reference,
+                    topic: `actuators/status/${flow.device.key}/${this.reference}`,
+                    payload: [{status: "READY", value: this.returnValue ? this.value.value : this.value}]
+                }
+    
+                if (this.msgComplete) {
+                    msg.complete = this.msgComplete;
+                }
+    
+                this.send(msg);
             }
-
-            msg.payload = {
-                type: 'actuator',
-                reference: this.reference,
-                topic: `actuators/status/${flow.device.key}/${this.reference}`,
-                payload: [{status: "READY", value: this.returnValue ? this.value.value : this.value}]
-            }
-
-            if (this.msgComplete) {
-                msg.complete = this.msgComplete;
-            }
-
-            this.send(msg);
         });
     }
     RED.nodes.registerType('actuationHandler', actuationHandler);
