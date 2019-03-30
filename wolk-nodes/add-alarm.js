@@ -1,11 +1,7 @@
 module.exports = RED => {
     function addAlarm(config) {
         RED.nodes.createNode(this, config);
-        const context = this.context();
-        const flow = context.flow;
-        this.reference = config.reference;
-        this.timestamp = config.timestamp;
-        this.msgComplete = config.msgComplete;
+        const flow = this.context().flow;
         this.on('input', msg => {
             this.value = config.value ? config.value : msg.payload;
 
@@ -14,12 +10,12 @@ module.exports = RED => {
             } else {
                 msg.payload = {
                     type: 'alarm',
-                    reference: this.reference,
-                    topic: `events/${flow.device.key}/${this.reference}`,
-                    payload: this.timestamp ? [{utc: Date.now(), data: this.value}] : [{data: this.value}]
+                    reference: config.reference,
+                    topic: `events/${flow.device.key}/${config.reference}`,
+                    payload: config.timestamp ? [{utc: Date.now(), data: this.value}] : [{data: this.value}]
                 }
-                if (this.msgComplete) {
-                    msg.complete = this.msgComplete;
+                if (config.msgComplete) {
+                    msg.complete = config.msgComplete;
                 }
                 this.send(msg);
             }

@@ -3,7 +3,6 @@ module.exports = RED => {
         RED.nodes.createNode(this, config);
         const flow = this.context().flow;
         this.actuatorReferences = config.actuatorReferences.split(';');
-        this.msgComplete = config.msgComplete;
         this.on('input', msg => {
             if (this.actuatorReferences) {
                 this.actuatorReferences.forEach((cur, ind) => {
@@ -15,8 +14,8 @@ module.exports = RED => {
                         payload: [{status: "READY", value: ""}]
                     }
 
-                    if (ind === this.actuatorReferences.length - 1 && this.msgComplete) {
-                        msg.complete = true;
+                    if (ind === (this.actuatorReferences.length - 1) && config.msgComplete) {
+                        msg.msgComplete = config.msgComplete;
                     }
                     
                     this.send(msg);

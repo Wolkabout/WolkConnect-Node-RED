@@ -1,11 +1,7 @@
 module.exports = RED => {
     function addSensorReading(config) {
         RED.nodes.createNode(this, config);
-        const context = this.context();
-        const flow = context.flow;
-        this.reference = config.reference;
-        this.msgComplete = config.msgComplete;
-        this.timestamp = config.timestamp;
+        const flow = this.context().flow;
         this.on('input', msg => {
             this.value = config.value ? config.value : msg.payload;
             
@@ -14,12 +10,12 @@ module.exports = RED => {
             } else {
                 msg.payload = {
                     type: 'sensor',
-                    reference: this.reference,
-                    topic: `readings/${flow.device.key}/${this.reference}`,
-                    payload: this.timestamp ? [{utc: Date.now(), data: this.value.toString()}] : [{data: this.value.toString()}]
+                    reference: config.reference,
+                    topic: `readings/${flow.device.key}/${config.reference}`,
+                    payload: config.timestamp ? [{utc: Date.now(), data: this.value.toString()}] : [{data: this.value.toString()}]
                 }
-                if (this.msgComplete) {
-                    msg.complete = this.msgComplete;
+                if (config.msgComplete) {
+                    msg.complete = config.msgComplete;
                 }
     
                 this.send(msg);
