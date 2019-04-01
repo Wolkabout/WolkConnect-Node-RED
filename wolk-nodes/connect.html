@@ -3,8 +3,9 @@
         category: 'WolkConnect',
         color: '#00afff',
         defaults: {
-            key: {value: ''},
-            password: {value: ''}
+            key: {value: '', required: true},
+            password: {value: '', required: true},
+            logFile: {value: ''}
         },
         inputs: 1,
         outputs: 1,
@@ -21,6 +22,10 @@
     <div class="form-row">
         <label for="node-input-password"><i class="icon-tag"></i> Device Password</label>
         <input type="password" id="node-input-password" placeholder="Device Password">
+    </div>
+    <div class="form-row">
+        <label for="node-input-logFile"><i class="icon-tag"></i> Log File Location</label>
+        <input type="text" id="node-input-logFile" placeholder="Location">
     </div>
 </script>
 

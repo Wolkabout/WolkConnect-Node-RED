@@ -19,7 +19,7 @@ Navigate to your Node-RED directory: ```$ cd ~/.node-red```.
 Install using:
 
 ```sh
-npm install node-red-contrib-wolkconnect
+npm install @wolkabout/wolkconnect-node-red
 ```
 
 ## Example Usage
@@ -103,6 +103,7 @@ WolkAbout Node_RED connector provides a mechanism for persisting data in situati
 
 Persisted readings are sent to WolkAbout IoT platform once connection is established.<br>
 Data persistence mechanism used **by default** stores data in-memory by using ```outboundMessageQueue``` node.<br>
+Data can be persisted by attaching a ```json```, and ```file``` write nodes to ```outboundMessageQueue``` node, and passing the file location to the ```connect``` node. The data is stored in JSON format.<br>
 
 Data persistence can also be implemented by the user by using a ```function``` node.<br>
 

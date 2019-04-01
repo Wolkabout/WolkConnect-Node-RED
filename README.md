@@ -19,7 +19,7 @@ Navigate to your Node-RED directory: ```$ cd ~/.node-red```.
 Install using:
 
 ```sh
-npm install node-red-contrib-wolkconnect
+npm install @wolkabout/wolkconnect-node-red
 ```
 
 ## Example Usage
