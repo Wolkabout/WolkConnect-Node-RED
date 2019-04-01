@@ -1,0 +1,24 @@
+<script type="text/javascript">
+    RED.nodes.registerType('outboundMessageQueue', {
+        category: 'WolkConnect',
+        color: '#00afff',
+        defaults: {
+            maxData: {maxData: 1}
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: 'logo.png',
+        label: 'outboundMessageQueue'
+    });
+</script>
+
+<script type="text/x-red" data-template-name="outboundMessageQueue">
+    <div class="form-row">
+        <label for="node-input-maxData"><i class="icon-tag"></i> Max Sensor Readings</label>
+        <input type="number" id="node-input-maxData" placeholder="Max Readings">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="outboundMessageQueue">
+    <p>Persist messages in memory<br></p>
+</script>

@@ -1,0 +1,35 @@
+<script type="text/javascript">
+    RED.nodes.registerType('configurationHandler', {
+        category: 'WolkConnect',
+        color: '#00afff',
+        defaults: {
+            configurationReferences: {value: ''},
+            configurationValues: {value: ''},
+            msgComplete: {value: false}
+
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: 'logo.png',
+        label: 'configurationHandler'
+    });
+</script>
+
+<script type="text/x-red" data-template-name="configurationHandler">
+    <div class="form-row">
+        <label for="node-input-configurationReferences"><i class="icon-tag"></i> Configuration References (delimiter - ';')</label>
+        <input type="text" id="node-input-configurationReferences" placeholder="Configuration References">
+    </div>
+    <div class="form-row">
+        <label for="node-input-configurationValues"><i class="icon-tag"></i> Configuration Values (delimiter - ';')</label>
+        <input type="text" id="node-input-configurationValues" placeholder="Configuration Values">
+    </div>
+    <div class="form-row">
+        <label for="node-input-msgComplete"><i class="icon-tag"></i> Message Complete</label>
+        <input type="checkbox" style="display:inline-block; width:15px; vertical-align:baseline;" id="node-input-msgComplete">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="configurationHandler">
+    <p>Simulates device connecting to the platform.<br>Pass the device key, password, and actuator references (if any).<br></p>
+</script>

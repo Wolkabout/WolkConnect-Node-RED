@@ -1,22 +1,22 @@
 <script type="text/javascript">
-    RED.nodes.registerType('addSensorReading', {
+    RED.nodes.registerType('actuationHandler', {
         category: 'WolkConnect',
         color: '#00afff',
         defaults: {
-            name: {name: ''},
+            name: {value: ''},
             value: {value:''},
             reference: {value: '', required: true},
-            msgComplete: {value: false},
-            timestamp: {value: false}
+            returnValue: {value: false},
+            msgComplete: {value: false}
         },
         inputs: 1,
         outputs: 1,
         icon: 'logo.png',
-        label: () => this.name || 'addSensorReading'
+        label: () => this.name || 'actuationHandler'
     });
 </script>
 
-<script type="text/x-red" data-template-name="addSensorReading">
+<script type="text/x-red" data-template-name="actuationHandler">
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
@@ -30,8 +30,8 @@
         <input type="text" id="node-input-reference" placeholder="Reference">
     </div>
     <div class="form-row">
-        <label for="node-input-timestamp"><i class="icon-tag"></i> Send Timestamp</label>
-        <input type="checkbox" style="display:inline-block; width:15px; vertical-align:baseline;" id="node-input-timestamp">
+        <label for="node-input-returnValue"><i class="icon-tag"></i> Return value</label>
+        <input type="checkbox" style="display:inline-block; width:15px; vertical-align:baseline;" id="node-input-returnValue">
     </div>
     <div class="form-row">
         <label for="node-input-msgComplete"><i class="icon-tag"></i> Message Complete</label>
@@ -39,6 +39,6 @@
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="addSensorReading">
-    <p>Adds a sensor reading to the queue, waiting to publish data.<br>Can be passed value to publish, or used in conjunction with the getRandomNumber nnode.<br></p>
+<script type="text/x-red" data-help-name="actuationHandler">
+    <p>Sets actuator value<br></p>
 </script>

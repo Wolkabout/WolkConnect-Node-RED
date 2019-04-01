@@ -1,6 +1,6 @@
 {
     "name": "node-red-contrib-wolkconnect",
-    "version": "0.0.2",
+    "version": "0.1.0",
     "description": "WolkConnect package for connecting to WolkAbout IoT tool through Node-RED",
     "author": "Milan Jankov <milan.jankov@wolkabout.com>",
     "dependencies": {},
@@ -14,9 +14,15 @@
             "connect": "./wolk-nodes/connect.js",
             "disconnect": "./wolk-nodes/disconnect.js",
             "add-sensor-reading": "./wolk-nodes/add-sensor-reading.js",
-            "get-random-number": "./wolk-nodes/get-random-number.js",
+            "get-random-value": "./wolk-nodes/get-random-value.js",
             "publish": "./wolk-nodes/publish.js",
-            "keep-alice": "./wolk-nodes/keep-alive.js"
+            "keep-alice": "./wolk-nodes/keep-alive.js",
+            "outbound-message-queue": "./wolk-nodes/outbound-message-queue.js",
+            "actuation-handler": "./wolk-nodes/actuation-handler.js",
+            "add-alarm": "./wolk-nodes/add-alarm.js",
+            "actuator-status-provider": "./wolk-nodes/actuator-status-provider.js",
+            "configuration-provider": "./wolk-nodes/configuration-provider.js",
+            "configuration-handler": "./wolk-nodes/configuration-handler.js"
         }
     }
 }

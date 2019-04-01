@@ -1,19 +1,27 @@
 module.exports = RED => {
     function publish(config) {
         RED.nodes.createNode(this, config);
-        const context = this.context();
-        const flow = context.flow;
-        const node = this;
+        const flow = this.context().flow;
         this.on('input', msg => {
             if (!flow.connected) {
-                this.log('Please connect device to platform');
+                throw new Error('Please connect device to platform');
+            } else {
+                for (let message of msg.payload) {
+                    msg.topic = message.topic;
+                    msg.qos = 1;
+                    msg.retain = false;
+                    switch (message.type){
+                        case 'sensor':
+                            msg.payload = message.payload;
+                            break;
+                        default:
+                            msg.payload = message.payload[0];
+                            break;
+                    }
+                    this.send(msg);
+                }
             }
-            for (let message of flow.outboundMessages) {
-                msg.topic = message.topic;
-                msg.payload = message.payload;
-                node.send(msg);
-            }
-            flow.outboundMessages = [];
+            
         });
     }
     RED.nodes.registerType('publish', publish);

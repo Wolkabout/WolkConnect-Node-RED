@@ -3,27 +3,18 @@ WolkAbout Node-RED nodes module for connecting devices to [WolkAbout IoT Platfor
 Supported device communication protocol(s):
 * JsonSingleReferenceProtocol
 
-## Prerequisite
+## Prerequisites
 
 * NodeJS ^10.15.13
 * npm ^6.4.1
 * Node-RED ^0.19.5
 
-NodeJs and npm can be installed either by installing binaries:
-
-[https://nodejs.org/en/download/](https://nodejs.org/en/download/)
-
-Or you can install using a system's package manager:
-
-[https://nodejs.org/en/download/package-manager/](https://nodejs.org/en/download/package-manager/)
-
-Node-Red installation instructions:
-
-[https://nodered.org/docs/getting-started/installation](https://nodered.org/docs/getting-started/installation)
+NodeJs and npm can be installed either by installing [binaries](https://nodejs.org/en/download/) or you can install using a [system's package manager](https://nodejs.org/en/download/package-manager/).<br>
+You can see the instructions for installing NodeRed [here](https://nodered.org/docs/getting-started/installation).
 
 ## Installation
 
-Navigate to your Node-RED directory: ```~/.node-red```.
+Navigate to your Node-RED directory: ```$ cd ~/.node-red```.
 
 Install using:
 
@@ -46,13 +37,18 @@ node-red
 
 In browser, navigate to ```http://localhost:1880```.
 
-Import ```simple-example-flow.json``` from ```/examples/simple/``` into Node-RED by copying its contents and using Node-RED's import from clipboard functionality. 
+Import ```simple-example-flow.json``` from ```/examples/simple/``` into Node-RED by copying its contents and using Node-RED's import from clipboard functionality, or drag the file onto the flow panel. 
 
-On ```mqtt``` node configuration panel, edit the mqtt broker.<br>
-Provide your device key and password to ```mqtt``` and ```connect``` nodes.<br>
-Use your device key for client ID, username.<br>
-Use device password for password on ```mqtt```.<br>
-Lastwill messages topic uses the following pattern ```lastwill/{device_key}```.<br>
+Edit WolkAbout Demo server in ```mqtt``` node properties:
+
+- Under *Connection* tab, use your device key for Client ID.
+- If you want to connect securely, change port to 8883, check the *Enable secure (SSL/TLS) connection* checkbox, add new tls-config, and upload ```ca.pem``` certificate (located in ```examples``` folder) as CA Certificate.
+- Under *Security* tab, use your device key for Username, and device password for Password fields.
+- Under *Messages* tab paste your device key after ```lastwill/``` in the Topic field for both close, and disconnect messages.
+
+Pass device key and password to the ```connect``` node.
+
+Check the message complete checkbox on the last node connected to the same ```inject``` node.
 
 Deploy the flow.
 
@@ -63,8 +59,7 @@ The ```mqtt``` node connects to the broker automatically on each deploy, the ```
 ### Adding sensor readings
 
 Add sensor reading by using ```addSensorReading``` node and passing it value and reference.<br>
-```getRandomNumber``` node can be used to pass random values to ```addSensorReading```. It has to be provided with minimum and maximum reading values.<br>
-If you are using ```getRandomNumber```, do not pass the value parameter to ```addSensorReading```.
+```getRandomValue``` node can be used to pass random values to ```addSensorReading```. It has to be provided with minimum and maximum reading values.
 
 ### Data publish strategy
 

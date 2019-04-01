@@ -1,8 +1,8 @@
 [
   {
-    "id": "7bb4d419.28f3ec",
+    "id": "7815c40.5848c3c",
     "type": "inject",
-    "z": "8fe2f514.8ce278",
+    "z": "da8f01f4.13dc7",
     "name": "",
     "topic": "",
     "payload": "",
@@ -13,43 +13,43 @@
     "onceDelay": 0.1,
     "x": 120,
     "y": 160,
-    "wires": [["72aa252b.119bac"]]
+    "wires": [["eacaa0da.a81c"]]
   },
   {
-    "id": "5ff9b8c7.42f508",
+    "id": "e106bc48.6b657",
     "type": "mqtt out",
-    "z": "8fe2f514.8ce278",
+    "z": "da8f01f4.13dc7",
     "name": "",
     "topic": "",
     "qos": "",
     "retain": "",
-    "broker": "f98d13e4.d8a59",
-    "x": 610,
+    "broker": "4ed39552.e1366c",
+    "x": 710,
     "y": 200,
     "wires": []
   },
   {
-    "id": "b6bc5126.2ba34",
+    "id": "b1c694ae.d048a8",
     "type": "publish",
-    "z": "8fe2f514.8ce278",
-    "x": 180,
-    "y": 280,
-    "wires": [["5ff9b8c7.42f508"]]
+    "z": "da8f01f4.13dc7",
+    "x": 440,
+    "y": 220,
+    "wires": [["ce24fb80.fccc78"]]
   },
   {
-    "id": "9e3994ef.59d968",
+    "id": "c5f5492a.a49db8",
     "type": "connect",
-    "z": "8fe2f514.8ce278",
+    "z": "da8f01f4.13dc7",
     "key": "",
     "password": "",
     "x": 280,
     "y": 40,
-    "wires": [["5ff9b8c7.42f508"]]
+    "wires": [["e106bc48.6b657"]]
   },
   {
-    "id": "5af5eee5.8588a",
+    "id": "ad032bb2.b49508",
     "type": "inject",
-    "z": "8fe2f514.8ce278",
+    "z": "da8f01f4.13dc7",
     "name": "",
     "topic": "",
     "payload": "",
@@ -60,12 +60,12 @@
     "onceDelay": 0.1,
     "x": 120,
     "y": 40,
-    "wires": [["9e3994ef.59d968"]]
+    "wires": [["c5f5492a.a49db8"]]
   },
   {
-    "id": "26d10dc5.135a62",
+    "id": "749dc439.62881c",
     "type": "inject",
-    "z": "8fe2f514.8ce278",
+    "z": "da8f01f4.13dc7",
     "name": "",
     "topic": "",
     "payload": "",
@@ -76,20 +76,20 @@
     "onceDelay": 0.1,
     "x": 120,
     "y": 100,
-    "wires": [["27f198b8.829978"]]
+    "wires": [["5b2ff306.07b0bc"]]
   },
   {
-    "id": "27f198b8.829978",
+    "id": "5b2ff306.07b0bc",
     "type": "disconnect",
-    "z": "8fe2f514.8ce278",
+    "z": "da8f01f4.13dc7",
     "x": 290,
     "y": 100,
-    "wires": [["5ff9b8c7.42f508"]]
+    "wires": [["e106bc48.6b657"]]
   },
   {
-    "id": "2293cc48.441f84",
+    "id": "7d9980a4.d9a72",
     "type": "inject",
-    "z": "8fe2f514.8ce278",
+    "z": "da8f01f4.13dc7",
     "name": "",
     "topic": "",
     "payload": "",
@@ -100,43 +100,87 @@
     "onceDelay": "",
     "x": 130,
     "y": 340,
-    "wires": [["dd3d61b0.e1329"]]
+    "wires": [["f7f179a2.964108"]]
   },
   {
-    "id": "dd3d61b0.e1329",
+    "id": "f7f179a2.964108",
     "type": "keepAlive",
-    "z": "8fe2f514.8ce278",
+    "z": "da8f01f4.13dc7",
+    "name": "",
     "x": 300,
     "y": 340,
-    "wires": [["5ff9b8c7.42f508"]]
+    "wires": [["e106bc48.6b657"]]
   },
   {
-    "id": "72aa252b.119bac",
-    "type": "getRandomNumber",
-    "z": "8fe2f514.8ce278",
-    "name": "",
-    "minimum": "-20",
-    "maximum": "85",
-    "x": 180,
-    "y": 200,
-    "wires": [["8aa79586.265a68"]]
-  },
-  {
-    "id": "8aa79586.265a68",
+    "id": "7072e9f4.c43908",
     "type": "addSensorReading",
-    "z": "8fe2f514.8ce278",
+    "z": "da8f01f4.13dc7",
+    "value": "",
     "reference": "T",
+    "msgComplete": true,
+    "timestamp": false,
     "x": 190,
     "y": 240,
-    "wires": [["b6bc5126.2ba34"]]
+    "wires": [["e48b24fc.81b638"]]
   },
   {
-    "id": "f98d13e4.d8a59",
+    "id": "eacaa0da.a81c",
+    "type": "getRandomValue",
+    "z": "da8f01f4.13dc7",
+    "name": "",
+    "minimum": "-25",
+    "maximum": "80",
+    "readingsAmount": "",
+    "boolean": false,
+    "threshold": 50,
+    "x": 190,
+    "y": 200,
+    "wires": [["7072e9f4.c43908"]]
+  },
+  {
+    "id": "e48b24fc.81b638",
+    "type": "join",
+    "z": "da8f01f4.13dc7",
+    "name": "",
+    "mode": "custom",
+    "build": "array",
+    "property": "payload",
+    "propertyType": "msg",
+    "key": "",
+    "joiner": "\\n",
+    "joinerType": "str",
+    "accumulate": false,
+    "timeout": "",
+    "count": "",
+    "reduceRight": false,
+    "reduceExp": "",
+    "reduceInit": "",
+    "reduceInitType": "",
+    "reduceFixup": "",
+    "x": 430,
+    "y": 180,
+    "wires": [["b1c694ae.d048a8"]]
+  },
+  {
+    "id": "ce24fb80.fccc78",
+    "type": "json",
+    "z": "da8f01f4.13dc7",
+    "name": "",
+    "property": "payload",
+    "action": "",
+    "pretty": false,
+    "x": 430,
+    "y": 260,
+    "wires": [["e106bc48.6b657"]]
+  },
+  {
+    "id": "4ed39552.e1366c",
     "type": "mqtt-broker",
     "z": "",
     "name": "WolkAbout Demo",
     "broker": "api-demo.wolkabout.com",
     "port": "1883",
+    "tls": "",
     "clientid": "",
     "usetls": false,
     "compatmode": true,

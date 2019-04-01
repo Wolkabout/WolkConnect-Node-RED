@@ -1,9 +1,9 @@
 <script type="text/javascript">
-    RED.nodes.registerType('addSensorReading', {
+    RED.nodes.registerType('addAlarm', {
         category: 'WolkConnect',
         color: '#00afff',
         defaults: {
-            name: {name: ''},
+            name: {value: ''},
             value: {value:''},
             reference: {value: '', required: true},
             msgComplete: {value: false},
@@ -12,11 +12,11 @@
         inputs: 1,
         outputs: 1,
         icon: 'logo.png',
-        label: () => this.name || 'addSensorReading'
+        label: () => this.name || 'addAlarm'
     });
 </script>
 
-<script type="text/x-red" data-template-name="addSensorReading">
+<script type="text/x-red" data-template-name="addAlarm">
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
@@ -39,6 +39,6 @@
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="addSensorReading">
-    <p>Adds a sensor reading to the queue, waiting to publish data.<br>Can be passed value to publish, or used in conjunction with the getRandomNumber nnode.<br></p>
+<script type="text/x-red" data-help-name="addAlarm">
+    <p>Adds an alarm to the queue, waiting to publish data<br></p>
 </script>
