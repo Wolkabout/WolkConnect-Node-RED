@@ -54,10 +54,6 @@ Edit WolkAbout Demo server in ```mqtt``` node properties:
 
 Pass device key and password to the ```connect``` node.
 
-Pass actuator references and configuration references to ```actuatorStatusProvider``` and ```configurationProvider``` nodes.
-
-Check the message complete checkbox on the last node connected to the same ```inject``` node.
-
 Deploy the flow.
 
 #### Connecting

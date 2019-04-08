@@ -2,9 +2,19 @@ module.exports = RED => {
     function configurationHandler(config) {
         RED.nodes.createNode(this, config);
         const flow = this.context().flow;
-        flow.configuration = flow.configuration ? flow.configuration : {};
+        this.configurationReferences = config.configurationReferences ? config.configurationReferences.split(';') : [];
+        this.configurationValues = config.configurationValues ? config.configurationValues.split(';') : [];
+        this.configuration = {};
         this.on('input', msg => {
-            this.value = config.value ? config.value : msg.payload.values;
+            if (config.configurationValues) {
+                for (let i = 0; i < this.configurationReferences.length; i++) {
+                    this.configuration[`${this.configurationReferences[i]}`] = this.configurationValues[i];
+                }
+            }
+
+            this.value = config.returnValue ?
+                msg.payload.values :
+                { values: this.configuration };
 
             if (flow.connected) {
                 msg.payload = {
