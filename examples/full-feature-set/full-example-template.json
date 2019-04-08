@@ -5,7 +5,6 @@
   "description": "This device template covers all the functionality provided by WolkConnect libraries",
   "deviceType": "STANDARD",
   "connectivityType": "MQTT_BROKER",
-  "firmwareUpdateType": "DFU",
   "published": false,
   "feeds": [
     {

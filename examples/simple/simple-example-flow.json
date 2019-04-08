@@ -1,9 +1,9 @@
 [
   {
-    "id": "7815c40.5848c3c",
+    "id": "f25dda34.984a08",
     "type": "inject",
-    "z": "da8f01f4.13dc7",
-    "name": "",
+    "z": "4b973a1.d37f2c4",
+    "name": "Send sensor reading",
     "topic": "",
     "payload": "",
     "payloadType": "date",
@@ -11,46 +11,47 @@
     "crontab": "",
     "once": false,
     "onceDelay": 0.1,
-    "x": 120,
+    "x": 130,
     "y": 160,
-    "wires": [["eacaa0da.a81c"]]
+    "wires": [["a4927cf9.54acd"]]
   },
   {
-    "id": "e106bc48.6b657",
+    "id": "b08ba279.20841",
     "type": "mqtt out",
-    "z": "da8f01f4.13dc7",
+    "z": "4b973a1.d37f2c4",
     "name": "",
     "topic": "",
     "qos": "",
     "retain": "",
-    "broker": "4ed39552.e1366c",
-    "x": 710,
-    "y": 200,
+    "broker": "96a6440e.383e48",
+    "x": 870,
+    "y": 220,
     "wires": []
   },
   {
-    "id": "b1c694ae.d048a8",
+    "id": "9fb1bbbb.3013a8",
     "type": "publish",
-    "z": "da8f01f4.13dc7",
-    "x": 440,
+    "z": "4b973a1.d37f2c4",
+    "x": 540,
     "y": 220,
-    "wires": [["ce24fb80.fccc78"]]
+    "wires": [["ab86c3b1.035d2"]]
   },
   {
-    "id": "c5f5492a.a49db8",
+    "id": "29cc25c.4afb7da",
     "type": "connect",
-    "z": "da8f01f4.13dc7",
+    "z": "4b973a1.d37f2c4",
     "key": "",
     "password": "",
-    "x": 280,
+    "logFile": "",
+    "x": 320,
     "y": 40,
-    "wires": [["e106bc48.6b657"]]
+    "wires": [["b08ba279.20841"]]
   },
   {
-    "id": "ad032bb2.b49508",
+    "id": "bd8d5c41.8349",
     "type": "inject",
-    "z": "da8f01f4.13dc7",
-    "name": "",
+    "z": "4b973a1.d37f2c4",
+    "name": "Connect device",
     "topic": "",
     "payload": "",
     "payloadType": "date",
@@ -60,13 +61,13 @@
     "onceDelay": 0.1,
     "x": 120,
     "y": 40,
-    "wires": [["c5f5492a.a49db8"]]
+    "wires": [["29cc25c.4afb7da"]]
   },
   {
-    "id": "749dc439.62881c",
+    "id": "9eb96243.b28e9",
     "type": "inject",
-    "z": "da8f01f4.13dc7",
-    "name": "",
+    "z": "4b973a1.d37f2c4",
+    "name": "Disconnect device",
     "topic": "",
     "payload": "",
     "payloadType": "date",
@@ -74,23 +75,23 @@
     "crontab": "",
     "once": false,
     "onceDelay": 0.1,
-    "x": 120,
+    "x": 130,
     "y": 100,
-    "wires": [["5b2ff306.07b0bc"]]
+    "wires": [["49c724d6.9c4fac"]]
   },
   {
-    "id": "5b2ff306.07b0bc",
+    "id": "49c724d6.9c4fac",
     "type": "disconnect",
-    "z": "da8f01f4.13dc7",
-    "x": 290,
+    "z": "4b973a1.d37f2c4",
+    "x": 330,
     "y": 100,
-    "wires": [["e106bc48.6b657"]]
+    "wires": [["b08ba279.20841"]]
   },
   {
-    "id": "7d9980a4.d9a72",
+    "id": "37802fc2.c485c",
     "type": "inject",
-    "z": "da8f01f4.13dc7",
-    "name": "",
+    "z": "4b973a1.d37f2c4",
+    "name": "Send keepalive",
     "topic": "",
     "payload": "",
     "payloadType": "date",
@@ -100,47 +101,48 @@
     "onceDelay": "",
     "x": 130,
     "y": 340,
-    "wires": [["f7f179a2.964108"]]
+    "wires": [["1b5976cb.212c69"]]
   },
   {
-    "id": "f7f179a2.964108",
+    "id": "1b5976cb.212c69",
     "type": "keepAlive",
-    "z": "da8f01f4.13dc7",
+    "z": "4b973a1.d37f2c4",
     "name": "",
-    "x": 300,
+    "x": 320,
     "y": 340,
-    "wires": [["e106bc48.6b657"]]
+    "wires": [["b08ba279.20841"]]
   },
   {
-    "id": "7072e9f4.c43908",
+    "id": "c3b7f9df.19b578",
     "type": "addSensorReading",
-    "z": "da8f01f4.13dc7",
+    "z": "4b973a1.d37f2c4",
+    "name": "",
     "value": "",
     "reference": "T",
     "msgComplete": true,
     "timestamp": false,
-    "x": 190,
-    "y": 240,
-    "wires": [["e48b24fc.81b638"]]
+    "x": 350,
+    "y": 200,
+    "wires": [["d743f760.f53ff8"]]
   },
   {
-    "id": "eacaa0da.a81c",
+    "id": "a4927cf9.54acd",
     "type": "getRandomValue",
-    "z": "da8f01f4.13dc7",
+    "z": "4b973a1.d37f2c4",
     "name": "",
     "minimum": "-25",
     "maximum": "80",
-    "readingsAmount": "",
-    "boolean": false,
+    "readingsAmount": "1",
+    "isBoolean": false,
     "threshold": 50,
-    "x": 190,
-    "y": 200,
-    "wires": [["7072e9f4.c43908"]]
+    "x": 350,
+    "y": 160,
+    "wires": [["c3b7f9df.19b578"]]
   },
   {
-    "id": "e48b24fc.81b638",
+    "id": "d743f760.f53ff8",
     "type": "join",
-    "z": "da8f01f4.13dc7",
+    "z": "4b973a1.d37f2c4",
     "name": "",
     "mode": "custom",
     "build": "array",
@@ -157,30 +159,30 @@
     "reduceInit": "",
     "reduceInitType": "",
     "reduceFixup": "",
-    "x": 430,
+    "x": 530,
     "y": 180,
-    "wires": [["b1c694ae.d048a8"]]
+    "wires": [["9fb1bbbb.3013a8"]]
   },
   {
-    "id": "ce24fb80.fccc78",
+    "id": "ab86c3b1.035d2",
     "type": "json",
-    "z": "da8f01f4.13dc7",
+    "z": "4b973a1.d37f2c4",
     "name": "",
     "property": "payload",
     "action": "",
     "pretty": false,
-    "x": 430,
+    "x": 530,
     "y": 260,
-    "wires": [["e106bc48.6b657"]]
+    "wires": [["b08ba279.20841"]]
   },
   {
-    "id": "4ed39552.e1366c",
+    "id": "96a6440e.383e48",
     "type": "mqtt-broker",
     "z": "",
     "name": "WolkAbout Demo",
     "broker": "api-demo.wolkabout.com",
     "port": "1883",
-    "tls": "",
+    "tls": "7ebeb9d9.c4cff8",
     "clientid": "",
     "usetls": false,
     "compatmode": true,
@@ -197,5 +199,19 @@
     "willQos": "2",
     "willRetain": "false",
     "willPayload": "Gone offline"
+  },
+  {
+    "id": "7ebeb9d9.c4cff8",
+    "type": "tls-config",
+    "z": "",
+    "name": "",
+    "cert": "",
+    "key": "",
+    "ca": "",
+    "certname": "",
+    "keyname": "",
+    "caname": "ca.pem",
+    "servername": "",
+    "verifyservercert": true
   }
 ]
