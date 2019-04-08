@@ -1,8 +1,8 @@
 [
   {
-    "id": "f25dda34.984a08",
+    "id": "88652836.7d07a8",
     "type": "inject",
-    "z": "4b973a1.d37f2c4",
+    "z": "5697cb0d.2d9814",
     "name": "Send sensor reading",
     "topic": "",
     "payload": "",
@@ -13,44 +13,44 @@
     "onceDelay": 0.1,
     "x": 130,
     "y": 160,
-    "wires": [["a4927cf9.54acd"]]
+    "wires": [["cdc6d66f.5bbcb8"]]
   },
   {
-    "id": "b08ba279.20841",
+    "id": "976fb782.633868",
     "type": "mqtt out",
-    "z": "4b973a1.d37f2c4",
+    "z": "5697cb0d.2d9814",
     "name": "",
     "topic": "",
     "qos": "",
     "retain": "",
-    "broker": "96a6440e.383e48",
+    "broker": "dff7e04a.65cd8",
     "x": 870,
     "y": 220,
     "wires": []
   },
   {
-    "id": "9fb1bbbb.3013a8",
+    "id": "bc12c146.748fe",
     "type": "publish",
-    "z": "4b973a1.d37f2c4",
+    "z": "5697cb0d.2d9814",
     "x": 540,
     "y": 220,
-    "wires": [["ab86c3b1.035d2"]]
+    "wires": [["86f37e23.9473e"]]
   },
   {
-    "id": "29cc25c.4afb7da",
+    "id": "f804eba6.fb0cf8",
     "type": "connect",
-    "z": "4b973a1.d37f2c4",
+    "z": "5697cb0d.2d9814",
     "key": "",
     "password": "",
     "logFile": "",
     "x": 320,
     "y": 40,
-    "wires": [["b08ba279.20841"]]
+    "wires": [["976fb782.633868"]]
   },
   {
-    "id": "bd8d5c41.8349",
+    "id": "fcae7971.7434c8",
     "type": "inject",
-    "z": "4b973a1.d37f2c4",
+    "z": "5697cb0d.2d9814",
     "name": "Connect device",
     "topic": "",
     "payload": "",
@@ -61,12 +61,12 @@
     "onceDelay": 0.1,
     "x": 120,
     "y": 40,
-    "wires": [["29cc25c.4afb7da"]]
+    "wires": [["f804eba6.fb0cf8"]]
   },
   {
-    "id": "9eb96243.b28e9",
+    "id": "db56c9c0.1d5b38",
     "type": "inject",
-    "z": "4b973a1.d37f2c4",
+    "z": "5697cb0d.2d9814",
     "name": "Disconnect device",
     "topic": "",
     "payload": "",
@@ -77,20 +77,20 @@
     "onceDelay": 0.1,
     "x": 130,
     "y": 100,
-    "wires": [["49c724d6.9c4fac"]]
+    "wires": [["ecda5396.5906d"]]
   },
   {
-    "id": "49c724d6.9c4fac",
+    "id": "ecda5396.5906d",
     "type": "disconnect",
-    "z": "4b973a1.d37f2c4",
+    "z": "5697cb0d.2d9814",
     "x": 330,
     "y": 100,
-    "wires": [["b08ba279.20841"]]
+    "wires": [["976fb782.633868"]]
   },
   {
-    "id": "37802fc2.c485c",
+    "id": "b5c05704.e3ed48",
     "type": "inject",
-    "z": "4b973a1.d37f2c4",
+    "z": "5697cb0d.2d9814",
     "name": "Send keepalive",
     "topic": "",
     "payload": "",
@@ -101,21 +101,21 @@
     "onceDelay": "",
     "x": 130,
     "y": 340,
-    "wires": [["1b5976cb.212c69"]]
+    "wires": [["460a083e.da3608"]]
   },
   {
-    "id": "1b5976cb.212c69",
+    "id": "460a083e.da3608",
     "type": "keepAlive",
-    "z": "4b973a1.d37f2c4",
+    "z": "5697cb0d.2d9814",
     "name": "",
     "x": 320,
     "y": 340,
-    "wires": [["b08ba279.20841"]]
+    "wires": [["976fb782.633868"]]
   },
   {
-    "id": "c3b7f9df.19b578",
+    "id": "bc58629f.68304",
     "type": "addSensorReading",
-    "z": "4b973a1.d37f2c4",
+    "z": "5697cb0d.2d9814",
     "name": "",
     "value": "",
     "reference": "T",
@@ -123,12 +123,12 @@
     "timestamp": false,
     "x": 350,
     "y": 200,
-    "wires": [["d743f760.f53ff8"]]
+    "wires": [["5ab85056.f3006"]]
   },
   {
-    "id": "a4927cf9.54acd",
+    "id": "cdc6d66f.5bbcb8",
     "type": "getRandomValue",
-    "z": "4b973a1.d37f2c4",
+    "z": "5697cb0d.2d9814",
     "name": "",
     "minimum": "-25",
     "maximum": "80",
@@ -137,12 +137,12 @@
     "threshold": 50,
     "x": 350,
     "y": 160,
-    "wires": [["c3b7f9df.19b578"]]
+    "wires": [["bc58629f.68304"]]
   },
   {
-    "id": "d743f760.f53ff8",
+    "id": "5ab85056.f3006",
     "type": "join",
-    "z": "4b973a1.d37f2c4",
+    "z": "5697cb0d.2d9814",
     "name": "",
     "mode": "custom",
     "build": "array",
@@ -161,22 +161,22 @@
     "reduceFixup": "",
     "x": 530,
     "y": 180,
-    "wires": [["9fb1bbbb.3013a8"]]
+    "wires": [["bc12c146.748fe"]]
   },
   {
-    "id": "ab86c3b1.035d2",
+    "id": "86f37e23.9473e",
     "type": "json",
-    "z": "4b973a1.d37f2c4",
+    "z": "5697cb0d.2d9814",
     "name": "",
     "property": "payload",
     "action": "",
     "pretty": false,
     "x": 530,
     "y": 260,
-    "wires": [["b08ba279.20841"]]
+    "wires": [["976fb782.633868"]]
   },
   {
-    "id": "96a6440e.383e48",
+    "id": "dff7e04a.65cd8",
     "type": "mqtt-broker",
     "z": "",
     "name": "WolkAbout Demo",
