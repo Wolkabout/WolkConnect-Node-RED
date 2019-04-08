@@ -1,6 +1,6 @@
 [
   {
-    "id": "3b6f9240.a437fe",
+    "id": "5635ee32.ee697",
     "type": "inject",
     "z": "5697cb0d.2d9814",
     "name": "Send random values from sensors/alarms",
@@ -11,20 +11,20 @@
     "crontab": "",
     "once": false,
     "onceDelay": "0",
-    "x": 200,
-    "y": 200,
+    "x": 220,
+    "y": 220,
     "wires": [
       [
-        "39d4c8e3.3f47f8",
-        "5f37ad.53ecb854",
-        "30010c13.e5de24",
-        "8618ef6d.0780f",
-        "85fb5268.3fd91"
+        "b05c17a9.bed788",
+        "1a291b38.6df925",
+        "e8f59a85.1890a8",
+        "f1d7a006.24da2",
+        "22c99278.b47f1e"
       ]
     ]
   },
   {
-    "id": "f6234ca0.5831",
+    "id": "cba5ef07.c0f9c",
     "type": "inject",
     "z": "5697cb0d.2d9814",
     "name": "Connect device",
@@ -35,12 +35,12 @@
     "crontab": "",
     "once": false,
     "onceDelay": 0.1,
-    "x": 120,
-    "y": 40,
-    "wires": [["54af5095.6278c"]]
+    "x": 140,
+    "y": 60,
+    "wires": [["684578b6.b0b7d8"]]
   },
   {
-    "id": "7ecba967.8f5718",
+    "id": "5c134183.aa095",
     "type": "inject",
     "z": "5697cb0d.2d9814",
     "name": "Disconnect device",
@@ -51,20 +51,20 @@
     "crontab": "",
     "once": false,
     "onceDelay": 0.1,
-    "x": 130,
-    "y": 120,
-    "wires": [["f98e44e2.d43c48"]]
+    "x": 150,
+    "y": 140,
+    "wires": [["ff3bded1.1b3b5"]]
   },
   {
-    "id": "f98e44e2.d43c48",
+    "id": "ff3bded1.1b3b5",
     "type": "disconnect",
     "z": "5697cb0d.2d9814",
-    "x": 470,
-    "y": 120,
-    "wires": [["e42e73e1.6c358"]]
+    "x": 490,
+    "y": 140,
+    "wires": [["bb8400dd.fccf9"]]
   },
   {
-    "id": "fdae14f5.d9c7b8",
+    "id": "eeacbe9b.1a34",
     "type": "inject",
     "z": "5697cb0d.2d9814",
     "name": "Send keepalive",
@@ -75,21 +75,21 @@
     "crontab": "",
     "once": false,
     "onceDelay": "",
-    "x": 130,
-    "y": 160,
-    "wires": [["8d320112.97745"]]
+    "x": 150,
+    "y": 180,
+    "wires": [["19305a12.3534f6"]]
   },
   {
-    "id": "8d320112.97745",
+    "id": "19305a12.3534f6",
     "type": "keepAlive",
     "z": "5697cb0d.2d9814",
     "name": "",
-    "x": 460,
-    "y": 160,
-    "wires": [["e42e73e1.6c358"]]
+    "x": 480,
+    "y": 180,
+    "wires": [["bb8400dd.fccf9"]]
   },
   {
-    "id": "12b626c5.416069",
+    "id": "dbf3c659.02be68",
     "type": "addSensorReading",
     "z": "5697cb0d.2d9814",
     "name": "",
@@ -97,66 +97,66 @@
     "reference": "T",
     "msgComplete": false,
     "timestamp": true,
-    "x": 490,
-    "y": 240,
-    "wires": [["d6e2a1de.f34ef"]]
+    "x": 510,
+    "y": 260,
+    "wires": [["aa10ac71.c98d"]]
   },
   {
-    "id": "d4d33096.d9ddd",
+    "id": "22be69c1.d86b46",
     "type": "addSensorReading",
     "z": "5697cb0d.2d9814",
     "value": "",
     "reference": "H",
     "msgComplete": false,
     "timestamp": true,
-    "x": 490,
-    "y": 320,
-    "wires": [["d6e2a1de.f34ef"]]
+    "x": 510,
+    "y": 340,
+    "wires": [["aa10ac71.c98d"]]
   },
   {
-    "id": "2f70d5d2.fbd02a",
+    "id": "d079de52.97a0e",
     "type": "addSensorReading",
     "z": "5697cb0d.2d9814",
     "value": "",
     "reference": "P",
     "msgComplete": false,
     "timestamp": true,
-    "x": 490,
-    "y": 400,
-    "wires": [["d6e2a1de.f34ef"]]
+    "x": 510,
+    "y": 420,
+    "wires": [["aa10ac71.c98d"]]
   },
   {
-    "id": "3bf69d81.6e1392",
+    "id": "5219df0.c784b2",
     "type": "outboundMessageQueue",
     "z": "5697cb0d.2d9814",
     "maxData": "10",
-    "x": 1030,
-    "y": 440,
-    "wires": [["dda9d605.050588", "8f7f143a.e49718"]]
+    "x": 1050,
+    "y": 460,
+    "wires": [["292d2b2f.e8a594", "ba8a2ef7.2e728"]]
   },
   {
-    "id": "e42e73e1.6c358",
+    "id": "bb8400dd.fccf9",
     "type": "mqtt out",
     "z": "5697cb0d.2d9814",
     "name": "",
     "topic": "",
     "qos": "",
     "retain": "",
-    "broker": "8d1d5d78.61824",
-    "x": 1250,
-    "y": 140,
+    "broker": "241f674b.fabaa8",
+    "x": 1270,
+    "y": 160,
     "wires": []
   },
   {
-    "id": "dda9d605.050588",
+    "id": "292d2b2f.e8a594",
     "type": "publish",
     "z": "5697cb0d.2d9814",
-    "x": 980,
-    "y": 400,
-    "wires": [["10f95faf.84eed"]]
+    "x": 1000,
+    "y": 420,
+    "wires": [["e21471ca.33b2a"]]
   },
   {
-    "id": "d6e2a1de.f34ef",
+    "id": "aa10ac71.c98d",
     "type": "join",
     "z": "5697cb0d.2d9814",
     "name": "",
@@ -175,60 +175,61 @@
     "reduceInit": "",
     "reduceInitType": "",
     "reduceFixup": "",
-    "x": 830,
-    "y": 440,
-    "wires": [["3bf69d81.6e1392"]]
+    "x": 850,
+    "y": 460,
+    "wires": [["5219df0.c784b2"]]
   },
   {
-    "id": "c95ffb84.5fb398",
+    "id": "afa8ce59.7a689",
     "type": "addSensorReading",
     "z": "5697cb0d.2d9814",
     "value": "",
     "reference": "ACL",
     "msgComplete": false,
     "timestamp": true,
-    "x": 490,
-    "y": 480,
-    "wires": [["d6e2a1de.f34ef"]]
+    "x": 510,
+    "y": 500,
+    "wires": [["aa10ac71.c98d"]]
   },
   {
-    "id": "3fd71641.94b0ca",
+    "id": "4896889b.1539f8",
     "type": "mqtt in",
     "z": "5697cb0d.2d9814",
     "name": "",
     "topic": "actuators/commands/device-key/SL",
     "qos": "2",
     "datatype": "auto",
-    "broker": "8d1d5d78.61824",
-    "x": 180,
-    "y": 800,
-    "wires": [["17b1bed4.7d49e1"]]
+    "broker": "241f674b.fabaa8",
+    "x": 200,
+    "y": 820,
+    "wires": [["2a1132ab.7e399e"]]
   },
   {
-    "id": "2123ddb0.357262",
+    "id": "7bdf973a.476548",
     "type": "actuationHandler",
     "z": "5697cb0d.2d9814",
+    "name": "",
     "value": "",
     "reference": "SL",
     "returnValue": true,
     "msgComplete": true,
-    "x": 610,
-    "y": 800,
-    "wires": [["d6e2a1de.f34ef"]]
+    "x": 630,
+    "y": 820,
+    "wires": [["aa10ac71.c98d"]]
   },
   {
-    "id": "54af5095.6278c",
+    "id": "684578b6.b0b7d8",
     "type": "connect",
     "z": "5697cb0d.2d9814",
     "key": "",
     "password": "",
     "logFile": "log.json",
-    "x": 460,
-    "y": 40,
-    "wires": [["a9316be7.a6ac28"]]
+    "x": 480,
+    "y": 60,
+    "wires": [["9a4fc87b.b6f198"]]
   },
   {
-    "id": "e39f8f8.5c6437",
+    "id": "cfa243b8.a1a98",
     "type": "addAlarm",
     "z": "5697cb0d.2d9814",
     "name": "",
@@ -236,132 +237,134 @@
     "reference": "HH",
     "msgComplete": true,
     "timestamp": true,
-    "x": 460,
-    "y": 560,
-    "wires": [["d6e2a1de.f34ef"]]
+    "x": 480,
+    "y": 580,
+    "wires": [["aa10ac71.c98d"]]
   },
   {
-    "id": "a9316be7.a6ac28",
+    "id": "9a4fc87b.b6f198",
     "type": "actuatorStatusProvider",
     "z": "5697cb0d.2d9814",
     "name": "",
     "actuatorReferences": "SW; SL",
     "msgComplete": true,
-    "x": 660,
-    "y": 40,
-    "wires": [["d6e2a1de.f34ef", "6e82a393.a643ac"]]
+    "x": 680,
+    "y": 60,
+    "wires": [["aa10ac71.c98d", "9d515991.dc9fa8"]]
   },
   {
-    "id": "6e82a393.a643ac",
+    "id": "9d515991.dc9fa8",
     "type": "configurationProvider",
     "z": "5697cb0d.2d9814",
     "name": "",
     "configurationReferences": "config_1;config_2;config_3;config_4;",
     "configurationValues": "0;false;configuration_3;configuration_4a,configuration_4b,configuration_4c",
     "msgComplete": true,
-    "x": 660,
-    "y": 80,
-    "wires": [["d6e2a1de.f34ef"]]
+    "x": 680,
+    "y": 100,
+    "wires": [["aa10ac71.c98d"]]
   },
   {
-    "id": "10f95faf.84eed",
+    "id": "e21471ca.33b2a",
     "type": "json",
     "z": "5697cb0d.2d9814",
     "name": "",
     "property": "payload",
     "action": "",
     "pretty": false,
-    "x": 970,
-    "y": 360,
-    "wires": [["e42e73e1.6c358"]]
+    "x": 990,
+    "y": 380,
+    "wires": [["bb8400dd.fccf9"]]
   },
   {
-    "id": "17b1bed4.7d49e1",
+    "id": "2a1132ab.7e399e",
     "type": "json",
     "z": "5697cb0d.2d9814",
     "name": "",
     "property": "payload",
     "action": "",
     "pretty": false,
-    "x": 450,
-    "y": 800,
-    "wires": [["2123ddb0.357262"]]
+    "x": 470,
+    "y": 820,
+    "wires": [["7bdf973a.476548"]]
   },
   {
-    "id": "f0052bee.ab8d38",
+    "id": "32415df5.56b3d2",
     "type": "mqtt in",
     "z": "5697cb0d.2d9814",
     "name": "",
     "topic": "actuators/commands/device-key/SW",
     "qos": "2",
     "datatype": "auto",
-    "broker": "8d1d5d78.61824",
-    "x": 180,
-    "y": 860,
-    "wires": [["2cb95bea.f50124"]]
+    "broker": "241f674b.fabaa8",
+    "x": 200,
+    "y": 880,
+    "wires": [["8ef840da.f0529"]]
   },
   {
-    "id": "29acc19d.06a1be",
+    "id": "d186c993.dbcf08",
     "type": "actuationHandler",
     "z": "5697cb0d.2d9814",
+    "name": "",
     "value": "",
     "reference": "SW",
     "returnValue": true,
     "msgComplete": true,
-    "x": 610,
-    "y": 860,
-    "wires": [["d6e2a1de.f34ef"]]
+    "x": 630,
+    "y": 880,
+    "wires": [["aa10ac71.c98d"]]
   },
   {
-    "id": "2cb95bea.f50124",
+    "id": "8ef840da.f0529",
     "type": "json",
     "z": "5697cb0d.2d9814",
     "name": "",
     "property": "payload",
     "action": "",
     "pretty": false,
-    "x": 450,
-    "y": 860,
-    "wires": [["29acc19d.06a1be"]]
+    "x": 470,
+    "y": 880,
+    "wires": [["d186c993.dbcf08"]]
   },
   {
-    "id": "3e82f477.f0560c",
+    "id": "5e589402.ee0d0c",
     "type": "mqtt in",
     "z": "5697cb0d.2d9814",
     "name": "",
     "topic": "configurations/commands/device-key",
     "qos": "2",
     "datatype": "auto",
-    "broker": "8d1d5d78.61824",
-    "x": 180,
-    "y": 920,
-    "wires": [["112d1264.578b6e"]]
+    "broker": "241f674b.fabaa8",
+    "x": 200,
+    "y": 940,
+    "wires": [["33b20327.1a000c"]]
   },
   {
-    "id": "1e1baa19.21fd76",
+    "id": "fecc1e5c.da796",
     "type": "configurationHandler",
     "z": "5697cb0d.2d9814",
-    "configurationReferences": "config_1;config_2;config_3;config_4;",
-    "configurationValues": "1;true;string;multi-a,multi-b,multi-c",
+    "configurationReferences": "",
+    "configurationValues": "",
+    "returnValue": true,
     "msgComplete": true,
-    "x": 620,
-    "y": 920,
-    "wires": [["d6e2a1de.f34ef"]]
+    "x": 640,
+    "y": 940,
+    "wires": [["aa10ac71.c98d"]]
   },
   {
-    "id": "112d1264.578b6e",
+    "id": "33b20327.1a000c",
     "type": "json",
     "z": "5697cb0d.2d9814",
     "name": "",
     "property": "payload",
     "action": "",
     "pretty": false,
-    "x": 450,
-    "y": 920,
-    "wires": [["1e1baa19.21fd76"]]
+    "x": 470,
+    "y": 940,
+    "wires": [["fecc1e5c.da796"]]
   },
   {
-    "id": "34917478.1b05ac",
+    "id": "d4187232.f7fb8",
     "type": "actuationHandler",
     "z": "5697cb0d.2d9814",
     "name": "",
@@ -369,12 +372,12 @@
     "reference": "SW",
     "returnValue": false,
     "msgComplete": false,
-    "x": 490,
-    "y": 640,
-    "wires": [["d6e2a1de.f34ef"]]
+    "x": 510,
+    "y": 660,
+    "wires": [["aa10ac71.c98d"]]
   },
   {
-    "id": "c5c3c54.b434e38",
+    "id": "555ae166.8c6c4",
     "type": "actuationHandler",
     "z": "5697cb0d.2d9814",
     "name": "",
@@ -382,12 +385,12 @@
     "reference": "SL",
     "returnValue": false,
     "msgComplete": true,
-    "x": 490,
-    "y": 720,
-    "wires": [["d6e2a1de.f34ef"]]
+    "x": 510,
+    "y": 740,
+    "wires": [["aa10ac71.c98d"]]
   },
   {
-    "id": "78e84080.d1414",
+    "id": "31b15d62.b56ba2",
     "type": "inject",
     "z": "5697cb0d.2d9814",
     "name": "Send random values from actuators",
@@ -398,12 +401,12 @@
     "crontab": "",
     "once": false,
     "onceDelay": 0.1,
-    "x": 180,
-    "y": 600,
-    "wires": [["579806a9.9fdcd8", "70fd7ab.d2c4a84"]]
+    "x": 200,
+    "y": 620,
+    "wires": [["62811f23.4f2a7", "2abbd52d.be88ca"]]
   },
   {
-    "id": "39d4c8e3.3f47f8",
+    "id": "b05c17a9.bed788",
     "type": "getRandomValue",
     "z": "5697cb0d.2d9814",
     "name": "",
@@ -412,12 +415,12 @@
     "readingsAmount": 1,
     "isBoolean": false,
     "threshold": 50,
-    "x": 490,
-    "y": 200,
-    "wires": [["12b626c5.416069"]]
+    "x": 510,
+    "y": 220,
+    "wires": [["dbf3c659.02be68"]]
   },
   {
-    "id": "5f37ad.53ecb854",
+    "id": "1a291b38.6df925",
     "type": "getRandomValue",
     "z": "5697cb0d.2d9814",
     "name": "",
@@ -426,12 +429,12 @@
     "readingsAmount": 1,
     "isBoolean": false,
     "threshold": 50,
-    "x": 490,
-    "y": 280,
-    "wires": [["d4d33096.d9ddd"]]
+    "x": 510,
+    "y": 300,
+    "wires": [["22be69c1.d86b46"]]
   },
   {
-    "id": "30010c13.e5de24",
+    "id": "e8f59a85.1890a8",
     "type": "getRandomValue",
     "z": "5697cb0d.2d9814",
     "name": "",
@@ -440,12 +443,12 @@
     "readingsAmount": 1,
     "isBoolean": false,
     "threshold": 50,
-    "x": 490,
-    "y": 360,
-    "wires": [["2f70d5d2.fbd02a"]]
+    "x": 510,
+    "y": 380,
+    "wires": [["d079de52.97a0e"]]
   },
   {
-    "id": "8618ef6d.0780f",
+    "id": "f1d7a006.24da2",
     "type": "getRandomValue",
     "z": "5697cb0d.2d9814",
     "name": "",
@@ -453,12 +456,12 @@
     "maximum": "100",
     "readingsAmount": "3",
     "threshold": 50,
-    "x": 489,
-    "y": 440,
-    "wires": [["c95ffb84.5fb398"]]
+    "x": 509,
+    "y": 460,
+    "wires": [["afa8ce59.7a689"]]
   },
   {
-    "id": "85fb5268.3fd91",
+    "id": "22c99278.b47f1e",
     "type": "getRandomValue",
     "z": "5697cb0d.2d9814",
     "name": "",
@@ -467,12 +470,12 @@
     "readingsAmount": 1,
     "isBoolean": true,
     "threshold": "80",
-    "x": 490,
-    "y": 520,
-    "wires": [["e39f8f8.5c6437"]]
+    "x": 510,
+    "y": 540,
+    "wires": [["cfa243b8.a1a98"]]
   },
   {
-    "id": "579806a9.9fdcd8",
+    "id": "62811f23.4f2a7",
     "type": "getRandomValue",
     "z": "5697cb0d.2d9814",
     "name": "",
@@ -481,12 +484,12 @@
     "readingsAmount": 1,
     "isBoolean": true,
     "threshold": "50",
-    "x": 490,
-    "y": 600,
-    "wires": [["34917478.1b05ac"]]
+    "x": 510,
+    "y": 620,
+    "wires": [["d4187232.f7fb8"]]
   },
   {
-    "id": "70fd7ab.d2c4a84",
+    "id": "2abbd52d.be88ca",
     "type": "getRandomValue",
     "z": "5697cb0d.2d9814",
     "name": "",
@@ -494,12 +497,12 @@
     "maximum": "100",
     "readingsAmount": 1,
     "threshold": "50",
-    "x": 490,
-    "y": 680,
-    "wires": [["c5c3c54.b434e38"]]
+    "x": 510,
+    "y": 700,
+    "wires": [["555ae166.8c6c4"]]
   },
   {
-    "id": "954a818c.25a7",
+    "id": "eb45e547.12d0c8",
     "type": "file",
     "z": "5697cb0d.2d9814",
     "name": "",
@@ -508,36 +511,36 @@
     "createDir": true,
     "overwriteFile": "true",
     "encoding": "none",
-    "x": 980,
-    "y": 520,
+    "x": 1000,
+    "y": 540,
     "wires": [[]]
   },
   {
-    "id": "8f7f143a.e49718",
+    "id": "ba8a2ef7.2e728",
     "type": "json",
     "z": "5697cb0d.2d9814",
     "name": "",
     "property": "payload",
     "action": "",
     "pretty": false,
-    "x": 970,
-    "y": 480,
-    "wires": [["954a818c.25a7"]]
+    "x": 990,
+    "y": 500,
+    "wires": [["eb45e547.12d0c8"]]
   },
   {
-    "id": "e9e02be7.c186a8",
+    "id": "a984cdf0.ecd84",
     "type": "configurationHandler",
     "z": "5697cb0d.2d9814",
     "configurationReferences": "config_1;config_2;config_3;config_4;",
     "configurationValues": "0;false;configuration_3;configuration_4a,configuration_4b,configuration_4c",
     "returnValue": false,
-    "msgComplete": false,
-    "x": 500,
-    "y": 760,
-    "wires": [[]]
+    "msgComplete": true,
+    "x": 520,
+    "y": 780,
+    "wires": [["aa10ac71.c98d"]]
   },
   {
-    "id": "b10edbaf.729f28",
+    "id": "9c80891f.8046d8",
     "type": "inject",
     "z": "5697cb0d.2d9814",
     "name": "Send custom configuration values",
@@ -548,18 +551,18 @@
     "crontab": "",
     "once": false,
     "onceDelay": 0.1,
-    "x": 170,
-    "y": 760,
-    "wires": [["e9e02be7.c186a8"]]
+    "x": 190,
+    "y": 780,
+    "wires": [["a984cdf0.ecd84"]]
   },
   {
-    "id": "8d1d5d78.61824",
+    "id": "241f674b.fabaa8",
     "type": "mqtt-broker",
     "z": "",
     "name": "WolkAbout Demo",
     "broker": "api-demo.wolkabout.com",
     "port": "1883",
-    "tls": "11e62f6e.37ede1",
+    "tls": "",
     "clientid": "",
     "usetls": false,
     "compatmode": true,
@@ -576,19 +579,5 @@
     "willQos": "2",
     "willRetain": "false",
     "willPayload": "Gone offline"
-  },
-  {
-    "id": "11e62f6e.37ede1",
-    "type": "tls-config",
-    "z": "",
-    "name": "",
-    "cert": "",
-    "key": "",
-    "ca": "",
-    "certname": "",
-    "keyname": "",
-    "caname": "ca.pem",
-    "servername": "",
-    "verifyservercert": true
   }
 ]

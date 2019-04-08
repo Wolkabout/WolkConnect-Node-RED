@@ -1,6 +1,6 @@
 [
   {
-    "id": "88652836.7d07a8",
+    "id": "8103492.9f375b8",
     "type": "inject",
     "z": "5697cb0d.2d9814",
     "name": "Send sensor reading",
@@ -13,31 +13,31 @@
     "onceDelay": 0.1,
     "x": 130,
     "y": 160,
-    "wires": [["cdc6d66f.5bbcb8"]]
+    "wires": [["db211853.83cbc8"]]
   },
   {
-    "id": "976fb782.633868",
+    "id": "2f5a1287.fe261e",
     "type": "mqtt out",
     "z": "5697cb0d.2d9814",
     "name": "",
     "topic": "",
     "qos": "",
     "retain": "",
-    "broker": "dff7e04a.65cd8",
+    "broker": "241f674b.fabaa8",
     "x": 870,
     "y": 220,
     "wires": []
   },
   {
-    "id": "bc12c146.748fe",
+    "id": "3afc35fd.932dba",
     "type": "publish",
     "z": "5697cb0d.2d9814",
     "x": 540,
     "y": 220,
-    "wires": [["86f37e23.9473e"]]
+    "wires": [["f9b7816c.716ae"]]
   },
   {
-    "id": "f804eba6.fb0cf8",
+    "id": "f707f9d4.1ad508",
     "type": "connect",
     "z": "5697cb0d.2d9814",
     "key": "",
@@ -45,10 +45,10 @@
     "logFile": "",
     "x": 320,
     "y": 40,
-    "wires": [["976fb782.633868"]]
+    "wires": [["2f5a1287.fe261e"]]
   },
   {
-    "id": "fcae7971.7434c8",
+    "id": "31e959e.c7604a6",
     "type": "inject",
     "z": "5697cb0d.2d9814",
     "name": "Connect device",
@@ -61,10 +61,10 @@
     "onceDelay": 0.1,
     "x": 120,
     "y": 40,
-    "wires": [["f804eba6.fb0cf8"]]
+    "wires": [["f707f9d4.1ad508"]]
   },
   {
-    "id": "db56c9c0.1d5b38",
+    "id": "c6574464.d64cf8",
     "type": "inject",
     "z": "5697cb0d.2d9814",
     "name": "Disconnect device",
@@ -77,18 +77,18 @@
     "onceDelay": 0.1,
     "x": 130,
     "y": 100,
-    "wires": [["ecda5396.5906d"]]
+    "wires": [["1c5fedb3.105dc2"]]
   },
   {
-    "id": "ecda5396.5906d",
+    "id": "1c5fedb3.105dc2",
     "type": "disconnect",
     "z": "5697cb0d.2d9814",
     "x": 330,
     "y": 100,
-    "wires": [["976fb782.633868"]]
+    "wires": [["2f5a1287.fe261e"]]
   },
   {
-    "id": "b5c05704.e3ed48",
+    "id": "ace700ee.32a17",
     "type": "inject",
     "z": "5697cb0d.2d9814",
     "name": "Send keepalive",
@@ -101,19 +101,19 @@
     "onceDelay": "",
     "x": 130,
     "y": 340,
-    "wires": [["460a083e.da3608"]]
+    "wires": [["4b3745f7.d4aa6c"]]
   },
   {
-    "id": "460a083e.da3608",
+    "id": "4b3745f7.d4aa6c",
     "type": "keepAlive",
     "z": "5697cb0d.2d9814",
     "name": "",
     "x": 320,
     "y": 340,
-    "wires": [["976fb782.633868"]]
+    "wires": [["2f5a1287.fe261e"]]
   },
   {
-    "id": "bc58629f.68304",
+    "id": "b9b952bd.190f6",
     "type": "addSensorReading",
     "z": "5697cb0d.2d9814",
     "name": "",
@@ -123,10 +123,10 @@
     "timestamp": false,
     "x": 350,
     "y": 200,
-    "wires": [["5ab85056.f3006"]]
+    "wires": [["94a32fec.e205c"]]
   },
   {
-    "id": "cdc6d66f.5bbcb8",
+    "id": "db211853.83cbc8",
     "type": "getRandomValue",
     "z": "5697cb0d.2d9814",
     "name": "",
@@ -137,10 +137,10 @@
     "threshold": 50,
     "x": 350,
     "y": 160,
-    "wires": [["bc58629f.68304"]]
+    "wires": [["b9b952bd.190f6"]]
   },
   {
-    "id": "5ab85056.f3006",
+    "id": "94a32fec.e205c",
     "type": "join",
     "z": "5697cb0d.2d9814",
     "name": "",
@@ -161,10 +161,10 @@
     "reduceFixup": "",
     "x": 530,
     "y": 180,
-    "wires": [["bc12c146.748fe"]]
+    "wires": [["3afc35fd.932dba"]]
   },
   {
-    "id": "86f37e23.9473e",
+    "id": "f9b7816c.716ae",
     "type": "json",
     "z": "5697cb0d.2d9814",
     "name": "",
@@ -173,16 +173,16 @@
     "pretty": false,
     "x": 530,
     "y": 260,
-    "wires": [["976fb782.633868"]]
+    "wires": [["2f5a1287.fe261e"]]
   },
   {
-    "id": "dff7e04a.65cd8",
+    "id": "241f674b.fabaa8",
     "type": "mqtt-broker",
     "z": "",
     "name": "WolkAbout Demo",
     "broker": "api-demo.wolkabout.com",
     "port": "1883",
-    "tls": "7ebeb9d9.c4cff8",
+    "tls": "",
     "clientid": "",
     "usetls": false,
     "compatmode": true,
@@ -199,19 +199,5 @@
     "willQos": "2",
     "willRetain": "false",
     "willPayload": "Gone offline"
-  },
-  {
-    "id": "7ebeb9d9.c4cff8",
-    "type": "tls-config",
-    "z": "",
-    "name": "",
-    "cert": "",
-    "key": "",
-    "ca": "",
-    "certname": "",
-    "keyname": "",
-    "caname": "ca.pem",
-    "servername": "",
-    "verifyservercert": true
   }
 ]
