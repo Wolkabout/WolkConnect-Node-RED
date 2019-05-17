@@ -1,3 +1,18 @@
+```
+██╗    ██╗ ██████╗ ██╗     ██╗  ██╗ ██████╗ ██████╗ ███╗   ██╗███╗   ██╗███████╗ ██████╗████████╗
+██║    ██║██╔═══██╗██║     ██║ ██╔╝██╔════╝██╔═══██╗████╗  ██║████╗  ██║██╔════╝██╔════╝╚══██╔══╝
+██║ █╗ ██║██║   ██║██║     █████╔╝ ██║     ██║   ██║██╔██╗ ██║██╔██╗ ██║█████╗  ██║        ██║   
+██║███╗██║██║   ██║██║     ██╔═██╗ ██║     ██║   ██║██║╚██╗██║██║╚██╗██║██╔══╝  ██║        ██║   
+╚███╔███╔╝╚██████╔╝███████╗██║  ██╗╚██████╗╚██████╔╝██║ ╚████║██║ ╚████║███████╗╚██████╗   ██║   
+ ╚══╝╚══╝  ╚═════╝ ╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═╝   
+                                  ███╗   ██╗ ██████╗ ██████╗ ███████╗    ██████╗ ███████╗██████╗ 
+                                  ████╗  ██║██╔═══██╗██╔══██╗██╔════╝    ██╔══██╗██╔════╝██╔══██╗
+                            █████╗██╔██╗ ██║██║   ██║██║  ██║█████╗█████╗██████╔╝█████╗  ██║  ██║
+                            ╚════╝██║╚██╗██║██║   ██║██║  ██║██╔══╝╚════╝██╔══██╗██╔══╝  ██║  ██║
+                                  ██║ ╚████║╚██████╔╝██████╔╝███████╗    ██║  ██║███████╗██████╔╝
+                                  ╚═╝  ╚═══╝ ╚═════╝ ╚═════╝ ╚══════╝    ╚═╝  ╚═╝╚══════╝╚═════╝ 
+```
+--- 
 WolkAbout Node-RED nodes module for connecting devices to [WolkAbout IoT Platform](https://demo.wolkabout.com/).
 
 Supported device communication protocol(s):
@@ -9,8 +24,8 @@ Supported device communication protocol(s):
 * npm ^6.4.1
 * Node-RED ^0.19.5
 
-NodeJs and npm can be installed either by installing [binaries](https://nodejs.org/en/download/) or you can install using a [system's package manager](https://nodejs.org/en/download/package-manager/).<br>
-You can see the instructions for installing NodeRed [here](https://nodered.org/docs/getting-started/installation).
+NodeJS and npm can be installed either by installing [binaries](https://nodejs.org/en/download/) or you can install using a [system's package manager](https://nodejs.org/en/download/package-manager/).<br>
+You can see the instructions for installing Node-RED [here](https://nodered.org/docs/getting-started/installation).
 
 ## Installation
 
@@ -26,7 +41,7 @@ npm install @wolkabout/wolkconnect-node-red
 
 ### Establishing connection with WolkAbout IoT platform
 
-Create a device on WolkAbout IoT platform by importing ```full-example-template.json``` located in ```/examples/full-feture-set``` .<br>
+Create a device on WolkAbout IoT platform by importing [full-example-template.json](/examples/full-feature-set/full-example-template.json).<br>
 
 Run Node-RED:
 
@@ -34,13 +49,13 @@ Run Node-RED:
 node-red
 ```
 
-In browser, navigate to ```http://localhost:1880``` .
+In browser, navigate to ```http://localhost:1880```.
 
-Import ```full-example-flow.json``` from ```/examples/full-feature-set/``` into Node-RED by copying its contents and using Node-RED's import from clipboard functionality, or drag the file onto the flow panel. 
+Create a device on WolkAbout IoT platform by importing [full-example-flow.json](/examples/full-feature-set/full-example-flow.json).
 
 #### Configuring mqtt nodes
 
-Edit WolkAbout Demo server in ```mqtt``` node properties:
+Edit WolkAbout Demo server in ```mqtt``` node properties by clicking the pen icon:
 
 - Under *Connection* tab, use your device key for Client ID.
 - If you want to connect securely, change port to 8883, check the *Enable secure (SSL/TLS) connection* checkbox, add new tls-config, and upload ```ca.pem``` certificate (located in ```examples``` folder) as CA Certificate.
