@@ -24,7 +24,7 @@ Supported device communication protocol(s):
 * npm ^6.4.1
 * Node-RED ^0.19.5
 
-NodeJs and npm can be installed either by installing [binaries](https://nodejs.org/en/download/) or you can install using a [system's package manager](https://nodejs.org/en/download/package-manager/).<br>
+NodeJS and npm can be installed either by installing [binaries](https://nodejs.org/en/download/) or you can install using a [system's package manager](https://nodejs.org/en/download/package-manager/).<br>
 You can see the instructions for installing Node-RED [here](https://nodered.org/docs/getting-started/installation).
 
 ## Installation
