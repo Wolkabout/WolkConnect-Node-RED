@@ -20,14 +20,18 @@ Supported device communication protocol(s):
 
 ## Prerequisites
 
-* NodeJS ^10.15.13
-* npm ^6.4.1
-* Node-RED ^0.19.5
+* NodeJS >= 10.15.13
+* npm >= 6.4.1
+* Node-RED 0.20.8
 
 NodeJS and npm can be installed either by installing [binaries](https://nodejs.org/en/download/) or you can install using a [system's package manager](https://nodejs.org/en/download/package-manager/).<br>
 You can see the instructions for installing Node-RED [here](https://nodered.org/docs/getting-started/installation).
+Make sure to install Node-RED version ```0.20.8```.
 
 ## Installation
+
+Open the system terminal, and run Node-RED using the command ```node-red``` so that Node-RED can set up its directory structure.
+Once the process completes its initialisation, it is safe to terminate it. 
 
 Navigate to your Node-RED directory: ```$ cd ~/.node-red```.
 
