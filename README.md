@@ -20,18 +20,22 @@ Supported device communication protocol(s):
 
 ## Prerequisites
 
-* NodeJS ^10.15.13
-* npm ^6.4.1
-* Node-RED ^0.19.5
+* NodeJS >= 10.15.13
+* npm >= 6.4.1
+* Node-RED 0.20.8
 
 NodeJS and npm can be installed either by installing [binaries](https://nodejs.org/en/download/) or you can install using a [system's package manager](https://nodejs.org/en/download/package-manager/).<br>
 You can see the instructions for installing Node-RED [here](https://nodered.org/docs/getting-started/installation).
+Make sure to install the exact Node-RED version ```0.20.8``` by running ```sudo npm install -g --unsafe-perm node-red@0.20.8```.
 
 ## Installation
 
+Open the system terminal, and run Node-RED using the command ```node-red``` so that Node-RED can set up its directory structure.
+Once the process completes its initialisation, it is safe to terminate it. 
+
 Navigate to your Node-RED directory: ```$ cd ~/.node-red```.
 
-Install using:
+Install [Wolkconnect Node-RED](https://www.npmjs.com/package/@wolkabout/wolkconnect-node-red) using:
 
 ```sh
 npm install @wolkabout/wolkconnect-node-red
@@ -53,14 +57,14 @@ In browser, navigate to ```http://localhost:1880```.
 
 Import [simple-example-flow.json](/examples/simple/simple-example-flow.json) into Node-RED by copying its contents and using Node-RED's import from clipboard functionality, or drag the file onto the flow panel. 
 
-Edit WolkAbout Demo server in ```mqtt``` node properties by clicking the pen icon:
+Double-click the ```mqtt``` node to enter edit mode. Edit the server input field by clicking the pen icon next to it (WolkAbout Demo server is already pre-selected):
 
 - Under *Connection* tab, use your device key for Client ID.
 - If you want to connect securely, change port to 8883, check the *Enable secure (SSL/TLS) connection* checkbox, add new tls-config, and upload ```ca.pem``` certificate (located in ```examples``` folder) as CA Certificate.
 - Under *Security* tab, use your device key for Username, and device password for Password fields.
 - Under *Messages* tab paste your device key after ```lastwill/``` in the Topic field for both close, and disconnect messages.
 
-Pass device key and password to the ```connect``` node.
+Edit the ```connect``` node by double-clicking it, and pass it device key and password.
 
 Deploy the flow.
 
