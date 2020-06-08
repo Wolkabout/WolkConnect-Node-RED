@@ -20,7 +20,7 @@ module.exports = RED => {
                 msg.payload = {
                     reference: 'config',
                     type: 'configuration',
-                    topic: `configurations/current/${flow.device.key}`,
+                    topic: `d2p/configuration_get/d/${flow.device.key}`,
                     payload: [this.value]
                 }
     

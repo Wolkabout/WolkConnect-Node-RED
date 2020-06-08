@@ -7,7 +7,7 @@ module.exports = RED => {
                 throw new Error('Please connect device to platform');
             } else {
                 for (let message of msg.payload) {
-                    msg.topic = message.topic;
+                    msg.topic = `${message.topic}`;
                     msg.qos = 1;
                     msg.retain = false;
                     switch (message.type){
@@ -18,7 +18,7 @@ module.exports = RED => {
                             msg.payload = message.payload[0];
                             break;
                     }
-                    this.send(msg);
+                    this.send(JSON.parse(JSON.stringify(msg)));
                 }
             }
             

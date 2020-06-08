@@ -5,7 +5,7 @@ module.exports = RED => {
         this.on('input', msg => {
             if (flow.connected) {
                 msg.topic = `ping/${flow.device.key}`;
-                msg.payload = `{"data": "true"}`;
+                msg.payload = '';
                 this.send(msg);
             }
         })

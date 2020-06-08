@@ -11,7 +11,7 @@ module.exports = RED => {
                 msg.payload = {
                     type: 'alarm',
                     reference: config.reference,
-                    topic: `events/${flow.device.key}/${config.reference}`,
+                    topic: `d2p/events/d/${flow.device.key}/r/${config.reference}`,
                     payload: config.timestamp ? [{utc: Date.now(), data: this.value}] : [{data: this.value}]
                 }
                 if (config.msgComplete) {

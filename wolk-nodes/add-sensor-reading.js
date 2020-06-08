@@ -11,7 +11,7 @@ module.exports = RED => {
                 msg.payload = {
                     type: 'sensor',
                     reference: config.reference,
-                    topic: `readings/${flow.device.key}/${config.reference}`,
+                    topic: `d2p/sensor_reading/d/${flow.device.key}/r/${config.reference}`,
                     payload: config.timestamp ? [{utc: Date.now(), data: this.value.toString()}] : [{data: this.value.toString()}]
                 }
                 if (config.msgComplete) {

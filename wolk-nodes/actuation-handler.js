@@ -15,7 +15,7 @@ module.exports = RED => {
                 msg.payload = {
                     type: 'actuator',
                     reference: config.reference,
-                    topic: `actuators/status/${flow.device.key}/${config.reference}`,
+                    topic: `d2p/actuators_status/d/${flow.device.key}/r/${config.reference}`,
                     payload: [{status: "READY", value: this.value}]
                 }
     

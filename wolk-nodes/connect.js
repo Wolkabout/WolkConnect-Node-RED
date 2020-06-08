@@ -4,6 +4,7 @@ module.exports = RED => {
         const fs = require('fs');
         const flow = this.context().flow;
         this.on('input', msg => {
+
             if (config.logFile) {
                 try {
                     this.logFile = JSON.parse(fs.readFileSync(`${config.logFile}`));
@@ -29,8 +30,7 @@ module.exports = RED => {
             flow.connected = true;
 
             msg.topic = `ping/${flow.device.key}`;
-            msg.payload = '{"data": "true"}';
-            
+            msg.payload = '';
             this.send(msg);
         })
     }

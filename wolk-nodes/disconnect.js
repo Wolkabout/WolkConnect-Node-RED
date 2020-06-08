@@ -5,7 +5,7 @@ module.exports = RED => {
         this.on('input', msg => {
             flow.connected = false;
             msg.topic = `lastwill/${flow.device.key}`;
-            msg.payload = 'Gone offline';
+            msg.payload = '';
             this.send(msg);
         })
     }
