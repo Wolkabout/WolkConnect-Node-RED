@@ -10,14 +10,8 @@ module.exports = RED => {
                     msg.topic = `${message.topic}`;
                     msg.qos = 1;
                     msg.retain = false;
-                    switch (message.type){
-                        case 'sensor':
-                            msg.payload = message.payload;
-                            break;
-                        default:
-                            msg.payload = message.payload[0];
-                            break;
-                    }
+
+                    msg.payload = message.payload[0];
                     this.send(JSON.parse(JSON.stringify(msg)));
                 }
             }
