@@ -3,7 +3,7 @@ module.exports = RED => {
         RED.nodes.createNode(this, config);
         const fs = require('fs');
         const flow = this.context().flow;
-        this.on('input', msg => {
+        this.on('input', function (msg, send, done) {
 
             if (config.logFile) {
                 try {
@@ -31,7 +31,9 @@ module.exports = RED => {
 
             msg.topic = `ping/${flow.device.key}`;
             msg.payload = '';
-            this.send(msg);
+
+            send(msg);
+            done();
         })
     }
     RED.nodes.registerType('connect', connect);

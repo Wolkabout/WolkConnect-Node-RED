@@ -2,7 +2,7 @@ module.exports = RED => {
     function addAlarm(config) {
         RED.nodes.createNode(this, config);
         const flow = this.context().flow;
-        this.on('input', msg => {
+        this.on('input', function (msg, send, done) {
             this.value = config.value ? config.value : msg.payload;
 
             if (!flow.connected) {
@@ -17,7 +17,9 @@ module.exports = RED => {
                 if (config.msgComplete) {
                     msg.complete = config.msgComplete;
                 }
-                this.send(msg);
+                
+                send(msg);
+                done();
             }
         });
     }

@@ -5,7 +5,7 @@ module.exports = RED => {
         this.configurationReferences = config.configurationReferences.split(';');
         this.configurationValues = config.configurationValues.split(';');
         this.configuration = {};
-        this.on('input', msg => {
+        this.on('input', function (msg, send, done) {
             const actuatorMsgComplete = msg.msgComplete;
 
             if (this.configurationReferences) {
@@ -25,8 +25,10 @@ module.exports = RED => {
             }
 
             if (actuatorMsgComplete){
-                this.send(msg);
+                send(msg);
             }
+            
+            done();
         })
     }
     RED.nodes.registerType('configurationProvider', configurationProvider);

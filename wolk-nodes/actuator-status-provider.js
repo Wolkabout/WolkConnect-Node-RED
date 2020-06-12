@@ -3,7 +3,8 @@ module.exports = RED => {
         RED.nodes.createNode(this, config);
         const flow = this.context().flow;
         this.actuatorReferences = config.actuatorReferences.split(';');
-        this.on('input', msg => {
+        this.actuatorValues = config.actuatorValues.split(';');
+        this.on('input', function (msg, send, done) {
             if (this.actuatorReferences) {
                 this.actuatorReferences.forEach((cur, ind) => {
                     let trimmed = cur.trim()
@@ -11,15 +12,16 @@ module.exports = RED => {
                         reference: `${trimmed}`,
                         type: 'actuator',
                         topic: `d2p/actuators_status/d/${flow.device.key}/r/${trimmed}`,
-                        payload: [{status: "READY", value: ""}]
+                        payload: [{status: "READY", value: this.actuatorValues[ind]}]
                     }
 
                     if (ind === (this.actuatorReferences.length - 1) && config.msgComplete) {
                         msg.msgComplete = config.msgComplete;
                     }
                     
-                    this.send(msg);
+                    send(JSON.parse(JSON.stringify(msg)));
                 })
+                done();
             }
         })
     }

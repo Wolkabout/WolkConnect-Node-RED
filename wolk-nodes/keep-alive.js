@@ -2,11 +2,13 @@ module.exports = RED => {
     function keepAlive(config) {
         RED.nodes.createNode(this, config);
         const flow = this.context().flow;
-        this.on('input', msg => {
+        this.on('input', function (msg, send, done) {
             if (flow.connected) {
                 msg.topic = `ping/${flow.device.key}`;
                 msg.payload = '';
-                this.send(msg);
+
+                send(msg);
+                done();
             }
         })
     }

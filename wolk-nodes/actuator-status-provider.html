@@ -5,6 +5,7 @@
         defaults: {
             name: {value: ''},
             actuatorReferences: {value: '', required: true},
+            actuatorValues: {value: ''},
             msgComplete: {value: false}
         },
         inputs: 1,
@@ -22,6 +23,10 @@
     <div class="form-row">
         <label for="node-input-actuatorReferences"><i class="icon-tag"></i> Actuator References (delimiter - ';')</label>
         <input type="text" id="node-input-actuatorReferences" placeholder="Actuator References">
+    </div>
+    <div class="form-row">
+        <label for="node-input-actuatorValues"><i class="icon-tag"></i> Actuator Values (delimiter - ';')</label>
+        <input type="text" id="node-input-actuatorValues" placeholder="Actuator Values">
     </div>
     <div class="form-row">
         <label for="node-input-msgComplete"><i class="icon-tag"></i> Message Complete</label>

@@ -2,7 +2,7 @@ module.exports = RED => {
     function publish(config) {
         RED.nodes.createNode(this, config);
         const flow = this.context().flow;
-        this.on('input', msg => {
+        this.on('input', function(msg, send, done) {
             if (!flow.connected) {
                 throw new Error('Please connect device to platform');
             } else {
@@ -12,10 +12,11 @@ module.exports = RED => {
                     msg.retain = false;
 
                     msg.payload = message.payload[0];
-                    this.send(JSON.parse(JSON.stringify(msg)));
+
+                    send(JSON.parse(JSON.stringify(msg)));
                 }
+                done();
             }
-            
         });
     }
     RED.nodes.registerType('publish', publish);

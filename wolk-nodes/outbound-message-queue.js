@@ -3,7 +3,7 @@ module.exports = RED => {
         RED.nodes.createNode(this, config);
         const flow = this.context().flow;
         this.maxData = parseInt(config.maxData, 10);
-        this.on('input', msg => {                         
+        this.on('input', function (msg, send, done) {                         
             msg.payload.forEach(message => {
                 // Checking if message with same reference exists in flow array
                 let existing = flow.outboundMessages.find(el => el.reference === message.reference);
@@ -22,7 +22,8 @@ module.exports = RED => {
             });
             
             msg.payload = flow.outboundMessages;
-            this.send(msg);
+            send(msg);
+            done();
         });
     }
     RED.nodes.registerType('outboundMessageQueue', outboundMessageQueue);

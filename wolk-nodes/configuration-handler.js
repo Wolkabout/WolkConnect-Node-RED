@@ -5,7 +5,7 @@ module.exports = RED => {
         this.configurationReferences = config.configurationReferences ? config.configurationReferences.split(';') : [];
         this.configurationValues = config.configurationValues ? config.configurationValues.split(';') : [];
         this.configuration = {};
-        this.on('input', msg => {
+        this.on('input', function (msg, send, done) {
             if (config.configurationValues) {
                 for (let i = 0; i < this.configurationReferences.length; i++) {
                     this.configuration[`${this.configurationReferences[i]}`] = this.configurationValues[i];
@@ -28,7 +28,8 @@ module.exports = RED => {
                     msg.complete = config.msgComplete;
                 }
     
-                this.send(msg);
+                send(msg);
+                done();
             }
         })
     }
