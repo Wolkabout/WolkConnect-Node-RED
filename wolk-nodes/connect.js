@@ -20,7 +20,7 @@ module.exports = RED => {
             flow.device = {
                 key: config.key,
                 password: config.password
-            }
+            };
 
             flow.outboundMessages = flow.outboundMessages ?
                 flow.outboundMessages : this.logFile ?
@@ -34,7 +34,7 @@ module.exports = RED => {
 
             send(msg);
             done();
-        })
+        });
     }
     RED.nodes.registerType('connect', connect);
 }

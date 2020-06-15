@@ -15,6 +15,7 @@ module.exports = RED => {
 
                     send(JSON.parse(JSON.stringify(msg)));
                 }
+
                 done();
             }
         });

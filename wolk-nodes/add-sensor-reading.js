@@ -13,7 +13,8 @@ module.exports = RED => {
                     reference: config.reference,
                     topic: `d2p/sensor_reading/d/${flow.device.key}/r/${config.reference}`,
                     payload: config.timestamp ? [{utc: Date.now(), data: this.value.toString()}] : [{data: this.value.toString()}]
-                }
+                };
+                
                 if (config.msgComplete) {
                     msg.complete = config.msgComplete;
                 }

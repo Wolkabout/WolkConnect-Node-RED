@@ -9,7 +9,7 @@ module.exports = RED => {
 
             send(msg);
             done();
-        })
+        });
     }
     RED.nodes.registerType('disconnect', disconnect);
 }

@@ -10,7 +10,7 @@ module.exports = RED => {
                 send(msg);
                 done();
             }
-        })
+        });
     }
     RED.nodes.registerType('keepAlive', keepAlive);
 }
