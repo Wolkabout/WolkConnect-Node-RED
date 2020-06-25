@@ -45,7 +45,7 @@ npm install @wolkabout/wolkconnect-node-red
 
 ### Establishing connection with WolkAbout IoT platform
 
-Create a device on WolkAbout IoT platform by importing [simple-example-template.json](/examples/simple/simple-example-template.json).<br>
+Create a device on WolkAbout IoT platform with Device type 'Simple example'<br>
 
 Run Node-RED:
 
