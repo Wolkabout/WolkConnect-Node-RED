@@ -1,1 +1,174 @@
-[{"name":"Wolk-NodeRED-WA-protocol-ffs","description":"","guid":"19c2a130-5d0d-4a4a-a70f-58b32a31dbf6","deviceType":"LINKED","protocol":"JSON","connectivityType":null,"firmwareUpdateType":null,"feeds":[{"name":"Temperature","description":null,"minimum":null,"maximum":null,"reference":"T","unit":{"name":"CELSIUS","guid":"7c805d10-a879-11e9-83cd-0a0027000005"}},{"name":"Pressure","description":null,"minimum":null,"maximum":null,"reference":"P","unit":{"name":"MILLIBAR","guid":"7c807980-a879-11e9-83cd-0a0027000005"}},{"name":"Humidity","description":null,"minimum":null,"maximum":null,"reference":"H","unit":{"name":"HUMIDITY_PERCENT","guid":"7c8080a3-a879-11e9-83cd-0a0027000005"}},{"name":"Acceletometer","description":null,"minimum":null,"maximum":null,"reference":"ACL","unit":{"name":"METRES_PER_SQUARE_SECOND","guid":"7c805931-a879-11e9-83cd-0a0027000005"}}],"actuators":[{"name":"Switch","description":null,"minimum":null,"maximum":null,"reference":"SW","unit":{"name":"BOOLEAN(ACTUATOR)","guid":"7c8088a0-a879-11e9-83cd-0a0027000005"}},{"name":"Slider","description":null,"minimum":null,"maximum":null,"reference":"SL","unit":{"name":"COUNT(ACTUATOR)","guid":"7c8086f2-a879-11e9-83cd-0a0027000005"}}],"alarms":[{"name":"High Humidity","description":null,"reference":"HH","message":"High Humidity has been detected"}],"configs":[{"name":"Heart Beat","description":null,"reference":"HB","minimum":0,"maximum":86400,"dataType":"NUMERIC","size":1,"defaultValue":"","labels":null},{"name":"Log Level","description":null,"reference":"LL","minimum":null,"maximum":null,"dataType":"STRING","size":1,"defaultValue":"","labels":null},{"name":"Enable Feeds","description":null,"reference":"EF","minimum":null,"maximum":null,"dataType":"STRING","size":1,"defaultValue":"","labels":null}],"attributes":[{"name":"CONNECTIVITY_TYPE","dataType":"ENUM","validationRegex":"^(MQTT|HTTP)$","options":["MQTT","HTTP"],"defaultValue":"MQTT","required":true,"readOnly":true},{"name":"FIRMWARE_UPDATE_ENABLED","dataType":"BOOLEAN","validationRegex":"^(true|false)$","options":null,"defaultValue":null,"required":false,"readOnly":true},{"name":"FIRMWARE_VERSION","dataType":"STRING","validationRegex":null,"options":null,"defaultValue":null,"required":false,"readOnly":true},{"name":"FILE_DIRECT_DOWNLOAD_ENABLED","dataType":"BOOLEAN","validationRegex":"^(true|false)$","options":null,"defaultValue":null,"required":false,"readOnly":true},{"name":"FILE_URL_DOWNLOAD_ENABLED","dataType":"BOOLEAN","validationRegex":"^(true|false)$","options":null,"defaultValue":null,"required":false,"readOnly":true}]}]
+[
+  {
+    "name": "Wolk-NodeRED-WA-protocol-ffs",
+    "description": "",
+    "guid": "19c2a130-5d0d-4a4a-a70f-58b32a31dbf6",
+    "deviceType": "LINKED",
+    "protocol": "JSON",
+    "connectivityType": null,
+    "firmwareUpdateType": null,
+    "feeds": [
+      {
+        "name": "Temperature",
+        "description": null,
+        "minimum": null,
+        "maximum": null,
+        "reference": "T",
+        "unit": {
+          "name": "CELSIUS",
+          "guid": "7c805d10-a879-11e9-83cd-0a0027000005"
+        }
+      },
+      {
+        "name": "Pressure",
+        "description": null,
+        "minimum": null,
+        "maximum": null,
+        "reference": "P",
+        "unit": {
+          "name": "MILLIBAR",
+          "guid": "7c807980-a879-11e9-83cd-0a0027000005"
+        }
+      },
+      {
+        "name": "Humidity",
+        "description": null,
+        "minimum": null,
+        "maximum": null,
+        "reference": "H",
+        "unit": {
+          "name": "HUMIDITY_PERCENT",
+          "guid": "7c8080a3-a879-11e9-83cd-0a0027000005"
+        }
+      },
+      {
+        "name": "Acceletometer",
+        "description": null,
+        "minimum": null,
+        "maximum": null,
+        "reference": "ACL",
+        "unit": {
+          "name": "METRES_PER_SQUARE_SECOND",
+          "guid": "7c805931-a879-11e9-83cd-0a0027000005"
+        }
+      }
+    ],
+    "actuators": [
+      {
+        "name": "Switch",
+        "description": null,
+        "minimum": null,
+        "maximum": null,
+        "reference": "SW",
+        "unit": {
+          "name": "BOOLEAN(ACTUATOR)",
+          "guid": "7c8088a0-a879-11e9-83cd-0a0027000005"
+        }
+      },
+      {
+        "name": "Slider",
+        "description": null,
+        "minimum": null,
+        "maximum": null,
+        "reference": "SL",
+        "unit": {
+          "name": "COUNT(ACTUATOR)",
+          "guid": "7c8086f2-a879-11e9-83cd-0a0027000005"
+        }
+      }
+    ],
+    "alarms": [
+      {
+        "name": "High Humidity",
+        "description": null,
+        "reference": "HH",
+        "message": "High Humidity has been detected"
+      }
+    ],
+    "configs": [
+      {
+        "name": "Heart Beat",
+        "description": null,
+        "reference": "HB",
+        "minimum": 0,
+        "maximum": 86400,
+        "dataType": "NUMERIC",
+        "size": 1,
+        "defaultValue": "",
+        "labels": null
+      },
+      {
+        "name": "Log Level",
+        "description": null,
+        "reference": "LL",
+        "minimum": null,
+        "maximum": null,
+        "dataType": "STRING",
+        "size": 1,
+        "defaultValue": "",
+        "labels": null
+      },
+      {
+        "name": "Enable Feeds",
+        "description": null,
+        "reference": "EF",
+        "minimum": null,
+        "maximum": null,
+        "dataType": "STRING",
+        "size": 1,
+        "defaultValue": "",
+        "labels": null
+      }
+    ],
+    "attributes": [
+      {
+        "name": "CONNECTIVITY_TYPE",
+        "dataType": "ENUM",
+        "validationRegex": "^(MQTT|HTTP)$",
+        "options": [
+          "MQTT",
+          "HTTP"
+        ],
+        "defaultValue": "MQTT",
+        "required": true,
+        "readOnly": true
+      },
+      {
+        "name": "FIRMWARE_UPDATE_ENABLED",
+        "dataType": "BOOLEAN",
+        "validationRegex": "^(true|false)$",
+        "options": null,
+        "defaultValue": null,
+        "required": false,
+        "readOnly": true
+      },
+      {
+        "name": "FIRMWARE_VERSION",
+        "dataType": "STRING",
+        "validationRegex": null,
+        "options": null,
+        "defaultValue": null,
+        "required": false,
+        "readOnly": true
+      },
+      {
+        "name": "FILE_DIRECT_DOWNLOAD_ENABLED",
+        "dataType": "BOOLEAN",
+        "validationRegex": "^(true|false)$",
+        "options": null,
+        "defaultValue": null,
+        "required": false,
+        "readOnly": true
+      },
+      {
+        "name": "FILE_URL_DOWNLOAD_ENABLED",
+        "dataType": "BOOLEAN",
+        "validationRegex": "^(true|false)$",
+        "options": null,
+        "defaultValue": null,
+        "required": false,
+        "readOnly": true
+      }
+    ]
+  }
+]
