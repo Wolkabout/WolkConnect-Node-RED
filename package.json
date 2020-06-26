@@ -1,6 +1,6 @@
 {
     "name": "@wolkabout/wolkconnect-node-red",
-    "version": "0.3.0",
+    "version": "1.0.0",
     "description": "WolkConnect package for connecting to WolkAbout IoT tool through Node-RED",
     "author": "Milan Jankov <milan.jankov@wolkabout.com>",
     "dependencies": {},
