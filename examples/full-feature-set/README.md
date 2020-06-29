@@ -16,7 +16,7 @@
 WolkAbout Node-RED nodes module for connecting devices to [WolkAbout IoT Platform](https://demo.wolkabout.com/).
 
 Supported device communication protocol(s):
-* Wolkabout Protocol
+* WolkAbout Protocol
 
 ## Prerequisites
 
