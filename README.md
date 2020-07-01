@@ -16,17 +16,17 @@
 WolkAbout Node-RED nodes module for connecting devices to [WolkAbout IoT Platform](https://demo.wolkabout.com/).
 
 Supported device communication protocol(s):
-* JsonSingleReferenceProtocol
+* WolkAbout Protocol
 
 ## Prerequisites
 
-* NodeJS >= 10.15.13
-* npm >= 6.4.1
-* Node-RED 0.20.8
+* NodeJS >= 12.18.0
+* npm >= 6.14.4
+* Node-RED 1.0.6
 
 NodeJS and npm can be installed either by installing [binaries](https://nodejs.org/en/download/) or you can install using a [system's package manager](https://nodejs.org/en/download/package-manager/).<br>
 You can see the instructions for installing Node-RED [here](https://nodered.org/docs/getting-started/installation).
-Make sure to install the exact Node-RED version ```0.20.8``` by running ```sudo npm install -g --unsafe-perm node-red@0.20.8```.
+Make sure to install the exact Node-RED version ```1.0.6``` by running ```sudo npm install -g --unsafe-perm node-red@1.0.6```.
 
 ## Installation
 
@@ -45,7 +45,7 @@ npm install @wolkabout/wolkconnect-node-red
 
 ### Establishing connection with WolkAbout IoT platform
 
-Create a device on WolkAbout IoT platform by importing [simple-example-template.json](/examples/simple/simple-example-template.json).<br>
+Create a device on WolkAbout IoT platform with Device type 'Simple example'<br>
 
 Run Node-RED:
 

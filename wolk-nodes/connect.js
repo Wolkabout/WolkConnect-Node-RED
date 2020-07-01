@@ -3,7 +3,8 @@ module.exports = RED => {
         RED.nodes.createNode(this, config);
         const fs = require('fs');
         const flow = this.context().flow;
-        this.on('input', msg => {
+        this.on('input', function (msg, send, done) {
+
             if (config.logFile) {
                 try {
                     this.logFile = JSON.parse(fs.readFileSync(`${config.logFile}`));
@@ -19,7 +20,7 @@ module.exports = RED => {
             flow.device = {
                 key: config.key,
                 password: config.password
-            }
+            };
 
             flow.outboundMessages = flow.outboundMessages ?
                 flow.outboundMessages : this.logFile ?
@@ -29,10 +30,11 @@ module.exports = RED => {
             flow.connected = true;
 
             msg.topic = `ping/${flow.device.key}`;
-            msg.payload = '{"data": "true"}';
-            
-            this.send(msg);
-        })
+            msg.payload = '';
+
+            send(msg);
+            done();
+        });
     }
     RED.nodes.registerType('connect', connect);
 }

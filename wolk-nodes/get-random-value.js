@@ -4,7 +4,7 @@ module.exports = RED => {
         this.minimum = Number(config.minimum);
         this.maximum = Number(config.maximum);
         this.readingsAmount = parseInt(config.readingsAmount, 10);
-        this.on('input', msg => {
+        this.on('input', function (msg, send, done) {
             msg.payload = []
 
             // Using loop in case multi-value reading is required
@@ -17,7 +17,8 @@ module.exports = RED => {
                 }
             }
 
-            this.send(msg);
+            send(msg);
+            done();
         });
     }
     RED.nodes.registerType('getRandomValue', getRandomValue);

@@ -2,12 +2,14 @@ module.exports = RED => {
     function disconnect(config) {
         RED.nodes.createNode(this, config);
         const flow = this.context().flow;
-        this.on('input', msg => {
+        this.on('input', function (msg, send, done) {
             flow.connected = false;
             msg.topic = `lastwill/${flow.device.key}`;
-            msg.payload = 'Gone offline';
-            this.send(msg);
-        })
+            msg.payload = '';
+
+            send(msg);
+            done();
+        });
     }
     RED.nodes.registerType('disconnect', disconnect);
 }
