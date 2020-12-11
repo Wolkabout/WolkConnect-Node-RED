@@ -83,7 +83,7 @@ Stored sensor readings are pushed to WolkAbout IoT platform on demand by using t
 
 ### Using the flow
 
-The flow used for ```simple-example-template.json``` looks like this:
+The flow used for ```simple-example.json``` looks like this:
 
 * After configuring nodes, deploy them
 * Run ```connect```

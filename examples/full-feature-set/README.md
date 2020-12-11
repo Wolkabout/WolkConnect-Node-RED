@@ -55,7 +55,7 @@ node-red
 
 In browser, navigate to ```http://localhost:1880```.
 
-Create a device on WolkAbout IoT platform by importing [full-example-flow.json](/examples/full-feature-set/full-example-flow.json).
+Create a device on WolkAbout IoT platform by importing [full-example.json](/examples/full-feature-set/full-example.json).
 
 #### Configuring mqtt nodes
 
