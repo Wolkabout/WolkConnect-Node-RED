@@ -12,6 +12,9 @@
                                   ██║ ╚████║╚██████╔╝██████╔╝███████╗    ██║  ██║███████╗██████╔╝
                                   ╚═╝  ╚═══╝ ╚═════╝ ╚═════╝ ╚══════╝    ╚═╝  ╚═╝╚══════╝╚═════╝ 
 ```
+# IMPORTANT
+**Compatible up to WolkAbout Platform 21.GA version.**
+
 --- 
 WolkAbout Node-RED nodes module for connecting devices to [WolkAbout IoT Platform](https://demo.wolkabout.com/).
 
